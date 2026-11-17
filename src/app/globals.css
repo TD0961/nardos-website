@@ -1,58 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-  --color-temer-green: #84A441;
-  --color-temer-darkgreen: #6e8a32;
-  --color-temer-lightgreen: #9bc24d;
-  --color-temer-dark: #181d24;
-  --color-temer-gold: #c3ae4b;
+    --color-temer-green: #84A441;
+    --color-temer-darkgreen: #6e8a32;
+    --color-temer-lightgreen: #9bc24d;
+    --color-temer-dark: #181d24;
+    --color-temer-gold: #c3ae4b;
 }
 
 :root {
-  --primary: #84A441;
-  --primary-hover: #718d36;
-  --dark: #181d24;
-  --body-text: #4a5568;
+    --primary: #84A441;
+    --primary-hover: #718d36;
+    --dark: #181d24;
+    --body-text: #4a5568;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  color: #333333;
-  background-color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #84A441;
-  border-radius: 4px;
+    background: #84A441;
+    border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #6e8a32;
+    background: #6e8a32;
 }
