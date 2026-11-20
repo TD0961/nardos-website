@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm prose text-gray-700 leading-relaxed text-sm sm:text-base space-y-6">
           <p>
-            At <strong>Temer Properties</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;), we respect your privacy and are committed to protecting personal information you provide to us through our website.
+            At <strong>Temer Property</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;), we respect your privacy and are committed to protecting personal information you provide to us through our website.
           </p>
 
           <h3 className="text-lg font-bold text-gray-900 mt-6">1. Information We Collect</h3>

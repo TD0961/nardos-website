@@ -17,7 +17,7 @@ export default function OurTeamPage() {
             Our Management <span className="text-[#84A441]">Team</span>
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Meet the experienced visionary leaders, engineers, and executives guiding Temer Properties toward architectural innovation and reliable delivery.
+            Meet the experienced visionary leaders, engineers, and executives guiding Temer Property toward architectural innovation and reliable delivery.
           </p>
         </div>
       </div>

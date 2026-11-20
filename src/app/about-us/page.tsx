@@ -68,7 +68,7 @@ export default function AboutUsPage() {
             Who We Are
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            About Temer Properties
+            About Temer Property
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Transforming the Ethiopian real estate landscape with architectural precision, structural reliability, and customer-first integrity since 2010 EC.
@@ -102,10 +102,10 @@ export default function AboutUsPage() {
               Building Trust & Delivering Dream Homes Across Addis Ababa
             </h2>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              Temer Properties, also known as Temer Real Estate, was founded in 2010 EC by two visionary individuals with a mission to transform the real estate landscape in Ethiopia. With a focus on delivering state-of-the-art real estate in Ethiopia, especially in Addis Ababa, we have successfully completed over 10 major projects, providing more than 350 quality apartment units and modern homes to our valued customers.
+              Temer Property, also known as Temer Real Estate, was founded in 2010 EC by two visionary individuals with a mission to transform the real estate landscape in Ethiopia. With a focus on delivering state-of-the-art real estate in Ethiopia, especially in Addis Ababa, we have successfully completed over 10 major projects, providing more than 350 quality apartment units and modern homes to our valued customers.
             </p>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              Currently, we are actively developing new apartments and commercial shops in Ethiopia, offering clients access to affordable housing and prime business spaces in top locations. Driven by our ambition to be the best real estate company in Ethiopia, Temer Properties is recognized for creativity, reliability, and a commitment to quality.
+              Currently, we are actively developing new apartments and commercial shops in Ethiopia, offering clients access to affordable housing and prime business spaces in top locations. Driven by our ambition to be the best real estate company in Ethiopia, Temer Property is recognized for creativity, reliability, and a commitment to quality.
             </p>
             <div className="pt-2 flex flex-wrap gap-4">
               <button
@@ -209,7 +209,7 @@ export default function AboutUsPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-500 text-sm mt-2">
-              Everything you need to know about purchasing property, titles, site visits, and payment schedules with Temer Properties.
+              Everything you need to know about purchasing property, titles, site visits, and payment schedules with Temer Property.
             </p>
           </div>
 

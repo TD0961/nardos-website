@@ -94,11 +94,11 @@ export default async function BlogPostPage({
             </p>
 
             <p>
-              Temer Properties continues to establish high benchmarks within Addis Ababa&apos;s real estate development landscape. With a relentless focus on prime positioning, exceptional architectural execution, and durable building standards, our developments offer unparalleled residential comfort and premier commercial opportunities.
+              Temer Property continues to establish high benchmarks within Addis Ababa&apos;s real estate development landscape. With a relentless focus on prime positioning, exceptional architectural execution, and durable building standards, our developments offer unparalleled residential comfort and premier commercial opportunities.
             </p>
 
             <p>
-              Whether you are an investor looking for high-yield rental returns or a family seeking a long-term home, Temer Properties ensures each property is backed by clear legal ownership documentation, verified construction standards, and responsive post-handover property care.
+              Whether you are an investor looking for high-yield rental returns or a family seeking a long-term home, Temer Property ensures each property is backed by clear legal ownership documentation, verified construction standards, and responsive post-handover property care.
             </p>
 
             <p>

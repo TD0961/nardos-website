@@ -117,7 +117,7 @@ export default function VideoSection() {
                 Crafting Modern Landmarks in Addis Ababa
               </h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Founded with a visionary commitment to elevate Ethiopia&apos;s living standards, Temer Properties has established a proven track record of timely completion, engineering integrity, and enduring architectural beauty.
+                Founded with a visionary commitment to elevate Ethiopia&apos;s living standards, Temer Property has established a proven track record of timely completion, engineering integrity, and enduring architectural beauty.
               </p>
             </div>
 

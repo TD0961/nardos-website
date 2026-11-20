@@ -15,17 +15,17 @@ export default function TermsOfUsePage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm prose text-gray-700 leading-relaxed text-sm sm:text-base space-y-6">
           <p>
-            Welcome to <strong>Temer Properties</strong>. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions of use.
+            Welcome to <strong>Temer Property</strong>. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions of use.
           </p>
 
           <h3 className="text-lg font-bold text-gray-900 mt-6">1. Property Listings & Accuracy</h3>
           <p>
-            All architectural renderings, floor plans, pricing estimates, and delivery schedules shown on this website are provided for illustrative and informational purposes. Official contract documents, sales agreements, and specifications provided by Temer Properties at the time of purchase govern all sales.
+            All architectural renderings, floor plans, pricing estimates, and delivery schedules shown on this website are provided for illustrative and informational purposes. Official contract documents, sales agreements, and specifications provided by Temer Property at the time of purchase govern all sales.
           </p>
 
           <h3 className="text-lg font-bold text-gray-900 mt-6">2. Intellectual Property</h3>
           <p>
-            All content, including videos, photographs, logos, and written materials, is the intellectual property of Temer Properties and may not be reproduced without written permission.
+            All content, including videos, photographs, logos, and written materials, is the intellectual property of Temer Property and may not be reproduced without written permission.
           </p>
 
           <h3 className="text-lg font-bold text-gray-900 mt-6">3. Governing Law</h3>

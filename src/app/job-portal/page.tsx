@@ -33,13 +33,13 @@ export default function JobPortalPage() {
       <div className="bg-[#181d24] text-white py-16 mb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Careers at Temer Properties
+            Careers at Temer Property
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
             Find Your Dream Job
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Explore exciting career opportunities with Temer Properties in Addis Ababa. Join our team and build your future.
+            Explore exciting career opportunities with Temer Property in Addis Ababa. Join our team and build your future.
           </p>
         </div>
       </div>

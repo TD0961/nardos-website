@@ -31,7 +31,7 @@ export default function BlogListPage() {
             News & Market Insights
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Temer Properties Blog
+            Temer Property Blog
           </h1>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
             Explore articles on real estate investments in Ethiopia, handover announcements, buyer tips, and corporate social responsibility.
