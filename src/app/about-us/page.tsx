@@ -81,9 +81,10 @@ export default function AboutUsPage() {
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-5 relative aspect-square rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
             <Image
-              src="https://temerproperties.com/wp-content/uploads/2026/05/threebeds.jpg"
-              alt="Temer Properties Building"
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&auto=format&fit=crop&q=80"
+              alt="Temer Property Building"
               fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
             />
             <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md p-4 rounded-xl text-white">

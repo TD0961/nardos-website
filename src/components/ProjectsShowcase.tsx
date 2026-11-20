@@ -4,12 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { useBooking } from "@/context/BookingContext";
 import { MapPin, Building, Calendar, ArrowRight } from "lucide-react";
 
 export default function ProjectsShowcase() {
   const [activeTab, setActiveTab] = useState<string>("All");
-  const { openBooking } = useBooking();
 
   const filteredProjects =
     activeTab === "All"
@@ -97,9 +95,11 @@ export default function ProjectsShowcase() {
 
               {/* Card Body */}
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#84A441] transition-colors mb-2">
-                  {project.title}
-                </h3>
+                <Link href={`/projects/${project.slug}`}>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#84A441] transition-colors mb-2">
+                    {project.title}
+                  </h3>
+                </Link>
                 <p className="text-gray-500 text-xs sm:text-sm line-clamp-2 mb-4 leading-relaxed">
                   {project.description}
                 </p>
@@ -126,13 +126,13 @@ export default function ProjectsShowcase() {
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => openBooking(project.title)}
-                      className="text-xs font-bold text-[#84A441] hover:text-[#6e8a32] flex items-center gap-1"
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="text-xs font-bold text-white bg-[#84A441] hover:bg-[#6e8a32] px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-sm"
                     >
-                      <span>Inquire Now</span>
+                      <span>View Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

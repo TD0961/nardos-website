@@ -65,6 +65,7 @@ export default function Navbar() {
                 alt="Temer Property"
                 fill
                 priority
+                sizes="(max-width: 640px) 128px, 144px"
                 className={`object-contain transition-all duration-200 ${
                   !scrolled && isHome ? "brightness-100" : ""
                 }`}
@@ -319,7 +320,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between pb-4 border-b border-gray-100">
               <div className="flex items-center gap-2">
                 <div className="relative h-9 w-28">
-                  <Image src="/images/logo.png" alt="Temer Property" fill className="object-contain" />
+                  <Image src="/images/logo.png" alt="Temer Property" fill sizes="112px" className="object-contain" />
                 </div>
               </div>
               <button

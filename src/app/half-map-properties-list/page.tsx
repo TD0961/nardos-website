@@ -177,6 +177,7 @@ export default function HalfMapPropertiesListPage() {
                   src={activeProperty.image}
                   alt={activeProperty.title}
                   fill
+                  sizes="80px"
                   className="object-cover"
                 />
               </div>

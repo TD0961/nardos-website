@@ -37,7 +37,7 @@ export const properties: Property[] = [
     "bathrooms": 1,
     "size": "76 m²",
     "price": "8,740,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/onebedcityplus.jpg",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Modern 1-bedroom apartments with a spacious 76 m² layout, designed for comfortable and practical living. Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -70,7 +70,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "100 m²",
     "price": "11,500,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/twobedrooms.jpg",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Modern 2-bedroom apartments with unit sizes ranging from 99-100 m², designed for comfortable and efficient living. Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -103,7 +103,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "151 m²",
     "price": "17,365,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/threebeds.jpg",
+    "image": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Spacious 3-bedroom apartments with unit size options ranging from 136-151 m², including 2 bathrooms and 1 private parking space. Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -136,7 +136,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "16,675,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/11/photo_2026-02-10_15-33-15.jpg",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "This three-bedroom apartment for sale in Ethiopia offers a spacious and thoughtfully designed living environment, perfect for families or individuals seeking comfort and style. With a total unit area Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -169,7 +169,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "15,950,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-24.jpg",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "This three-bedroom apartment for sale in Ethiopia offers a spacious and thoughtfully designed living environment ideal for families or individuals seeking extra comfort. With a total unit area of 672. Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -202,7 +202,7 @@ export const properties: Property[] = [
     "bathrooms": 1,
     "size": "76 m²",
     "price": "8,360,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-04.jpg",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "This one-bedroom apartment for sale in Ethiopia offers a thoughtfully designed living space ideal for individuals or couples. With a total unit area of 672.51 sq.ft, the layout includes a cozy bedroom Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -235,7 +235,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "14,850,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/11/test.jpg",
+    "image": "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Located in Gelan, this G+7 commercial building offers modern and functional spaces tailored for growing businesses. With a total floor area of 2,834.79 SQM, including 1,730.70 SQM of unit area and 1,1 Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -268,7 +268,7 @@ export const properties: Property[] = [
     "bathrooms": 1,
     "size": "76 m²",
     "price": "8,208,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-59.jpg",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "This one-bedroom apartment for sale in Ethiopia offers a thoughtfully designed and comfortable living space, ideal for individuals or couples. Featuring a cozy bedroom and an inviting open-concept liv Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -301,7 +301,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "11,880,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-33-05.jpg",
+    "image": "https://images.unsplash.com/photo-1502005229762-ee1b2b8ab00f?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "These two-bedroom apartments for sale in Ethiopia provide a well-designed and comfortable living space, ideal for small families, couples, or individuals seeking extra room. With cozy bedrooms, includ Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -334,7 +334,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "15,660,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-33-02.jpg",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "These three-bedroom apartments for sale in Ethiopia provide a generous and adaptable living space, perfectly suited for families. They feature cozy bedrooms along with a peaceful master suite designed Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -367,7 +367,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "12,650,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-33-11.jpg",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a well-designed and comfortable living space, ideal for small families, couples, or individuals seeking extra room. With cozy bedrooms, including a peaceful master b Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -400,7 +400,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "16,675,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-33-08.jpg",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -433,7 +433,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "19,575,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/t-cenetr-3.jpg",
+    "image": "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -466,7 +466,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "14,850,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/GoldmallAds-1.jpg",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Located in Piassa, this 2B+G+5 commercial building offers units from 10 SQM. With excavation completed, it includes key amenities like an elevator, parking, EV charging, and a garbage chute-ideal for Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -499,7 +499,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "14,850,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/GoldmallAds-1.jpg",
+    "image": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Located in Piassa, this 2B+G+5 commercial building features units starting from 10 SQM. With excavation complete, it offers essential amenities such as an elevator, parking, EV charging, and a garbage Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -532,7 +532,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "14,850,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/GoldmallAds-1.jpg",
+    "image": "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "Situated in the vibrant Piassa district, this B+G+5 commercial development presents units starting from 10 SQM. With excavation work finalized, the property is equipped with essential features includi Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -565,7 +565,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "14,210,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/achante-3.jpg",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -598,7 +598,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "9,790,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/feres2.jpg",
+    "image": "https://images.unsplash.com/photo-1502005229762-ee1b2b8ab00f?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a spacious and functional living space, featuring a comfortable bedroom and a serene master suite, perfect for small families or individuals. The open living and din Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -631,7 +631,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "12,905,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/feres3.jpg",
+    "image": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -664,7 +664,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "14,210,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/sumale-tera3.jpg",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -697,7 +697,7 @@ export const properties: Property[] = [
     "bathrooms": 3,
     "size": "145 m²",
     "price": "12,905,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/lomiyad4.jpg",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The four-bedroom apartments provide an expansive and adaptable living space, featuring four well-appointed bedrooms, including a luxurious master suite, perfect for larger families or those who desire Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -730,7 +730,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "12,905,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-36.jpg",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -763,7 +763,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "9,790,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-36.jpg",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a spacious and functional living space, featuring a comfortable bedroom and a serene master suite, perfect for small families or individuals. The open living and din Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -796,7 +796,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "12,100,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-30.jpg",
+    "image": "https://images.unsplash.com/photo-1502005229762-ee1b2b8ab00f?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a spacious and functional living space, featuring a comfortable bedroom and a serene master suite, perfect for small families or individuals. The open living and din Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -829,7 +829,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "15,950,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/02/photo_2026-02-10_15-32-28.jpg",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -862,7 +862,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "16,675,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/3SEKLYCE.jpg",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -895,7 +895,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "13,340,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/HAILE3.jpg",
+    "image": "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -928,7 +928,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "15,660,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/newwroad.jpg",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -961,7 +961,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "11,880,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/newroad2-1.jpg",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a spacious and functional living space, featuring a comfortable bedroom and a serene master suite, perfect for small families or individuals. The open living and din Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -994,7 +994,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "145 m²",
     "price": "15,660,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/jjio.jpg",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The three-bedroom apartments offer a spacious and versatile living space, featuring comfortable bedrooms and a serene master suite, ideal for families. The open living and dining areas provide a perfe Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -1027,7 +1027,7 @@ export const properties: Property[] = [
     "bathrooms": 2,
     "size": "110 m²",
     "price": "11,880,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/LYCEBURAT2.jpg",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The two-bedroom apartments provide a spacious and functional living space, featuring a comfortable bedroom and a serene master suite, perfect for small families or individuals. The open living and din Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",
@@ -1060,7 +1060,7 @@ export const properties: Property[] = [
     "bathrooms": 1,
     "size": "76 m²",
     "price": "8,208,000 ETB",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/05/LYCEEBURAT1-1.jpg",
+    "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&auto=format&fit=crop&q=80",
     "excerpt": "The one-bedroom apartments offer a comfortable and functional living space, featuring a cozy bedroom and a serene master suite, ideal for small families or individuals. The open living and dining area Features high-grade finishes, generous natural lighting, and access to all premier building amenities.",
     "features": [
       "24/7 Security & CCTV",

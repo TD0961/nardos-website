@@ -16,7 +16,7 @@ export const leadership: TeamMember[] = [
     "department": "Executive Leadership",
     "phone": "0938125777",
     "email": "ceo@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/Umer.jpg"
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 102,
@@ -25,7 +25,7 @@ export const leadership: TeamMember[] = [
     "department": "Executive Leadership",
     "phone": "0938125777",
     "email": "deputy@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/jafar.jpg"
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 103,
@@ -34,7 +34,7 @@ export const leadership: TeamMember[] = [
     "department": "Executive Leadership",
     "phone": "0938125777",
     "email": "director@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/Sumeya.jpg"
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
   }
 ];
 export const management: TeamMember[] = [
@@ -45,7 +45,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "operations@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/usman.jpg"
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 105,
@@ -54,7 +54,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "finance@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/jemal.jpg"
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 106,
@@ -63,7 +63,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "marketing@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/Hamid.jpg"
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 107,
@@ -72,7 +72,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "hr@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/semira.jpg"
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 108,
@@ -81,7 +81,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "legal@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/eyerus.jpg"
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 109,
@@ -90,7 +90,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "procurement@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/Ahmed.jpg"
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 110,
@@ -99,7 +99,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "engineering@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/hagos.jpg"
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 111,
@@ -108,7 +108,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "projects@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/teshome.jpg"
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 112,
@@ -117,7 +117,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "customers@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/ekram.jpg"
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 113,
@@ -126,7 +126,7 @@ export const management: TeamMember[] = [
     "department": "Management",
     "phone": "0938125777",
     "email": "it@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2026/05/nati.jpg"
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
   }
 ];
 export const salesOfficers: TeamMember[] = [
@@ -137,7 +137,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/yecgh.jpg"
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24448,
@@ -146,7 +146,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/tedy.jpg"
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24437,
@@ -155,7 +155,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/hach.jpg"
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24433,
@@ -164,7 +164,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/yy.jpg"
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24431,
@@ -173,7 +173,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/nj.jpg"
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24428,
@@ -182,7 +182,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/jem.jpg"
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24426,
@@ -191,7 +191,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/kall.jpg"
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24424,
@@ -200,7 +200,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/kids.jpg"
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24413,
@@ -209,7 +209,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/mekdel.jpg"
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24407,
@@ -218,7 +218,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/merd.jpg"
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24399,
@@ -227,7 +227,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/samu.jpg"
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 24372,
@@ -236,7 +236,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/08/binit.jpg"
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23572,
@@ -245,7 +245,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/fey.jpg"
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23569,
@@ -254,7 +254,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/elee.jpg"
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23566,
@@ -263,7 +263,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/birru.jpg"
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23563,
@@ -272,7 +272,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/bire.jpg"
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23560,
@@ -281,7 +281,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/biniy.jpg"
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23557,
@@ -290,7 +290,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/eza.jpg"
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23554,
@@ -299,7 +299,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/sd.jpg"
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23550,
@@ -308,7 +308,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/birr.jpg"
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23546,
@@ -317,7 +317,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/aman.jpg"
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23543,
@@ -326,7 +326,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/alemu.jpg"
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23534,
@@ -335,7 +335,7 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/ju-1.jpg"
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": 23531,
@@ -344,6 +344,6 @@ export const salesOfficers: TeamMember[] = [
     "department": "Sales & Customer Relations",
     "phone": "0938125777",
     "email": "sales@temerproperties.com",
-    "image": "https://temerproperties.com/wp-content/uploads/2025/07/yyo.jpg"
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80"
   }
 ];

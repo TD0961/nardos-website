@@ -223,23 +223,26 @@ export default async function PropertyDetailPage({
               alt={property.title}
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 66vw"
               className="object-cover"
             />
           </div>
           <div className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-4">
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-gray-100">
               <Image
-                src="https://temerproperties.com/wp-content/uploads/2026/05/twobedrooms.jpg"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80"
                 alt="Interior showcase"
                 fill
+                sizes="(max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md bg-gray-100">
               <Image
-                src="https://temerproperties.com/wp-content/uploads/2026/05/threebeds.jpg"
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop&q=80"
                 alt="Architectural view"
                 fill
+                sizes="(max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -406,9 +409,10 @@ export default async function PropertyDetailPage({
               <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-200">
                   <Image
-                    src="https://temerproperties.com/wp-content/uploads/2025/08/tedy.jpg"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
                     alt="Property Consultant"
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>

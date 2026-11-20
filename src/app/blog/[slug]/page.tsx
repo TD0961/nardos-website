@@ -83,6 +83,7 @@ export default async function BlogPostPage({
               alt={post.title}
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover"
             />
           </div>
@@ -136,7 +137,7 @@ export default async function BlogPostPage({
                 className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm p-4 flex flex-col group"
               >
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-gray-100">
-                  <Image src={r.image} alt={r.title} fill className="object-cover" />
+                  <Image src={r.image} alt={r.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
                 </div>
                 <span className="text-[10px] font-bold text-[#84A441] uppercase">
                   {r.category}
