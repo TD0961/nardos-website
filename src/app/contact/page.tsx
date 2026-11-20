@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin, Clock, CheckCircle, Send, ArrowRight } from "lucide-react";
 import { trackInquirySubmit, trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
+import InnerHero from "@/components/InnerHero";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -54,21 +55,20 @@ export default function ContactPage() {
     "https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20would%20like%20to%20discuss%20available%20apartments.";
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Get In Touch
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Contact Temer Property
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Have questions about our apartment developments, pricing, or payment plans? Connect directly with our personal sales advisory team.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Contact Temer Property"
+        subtitle="Have questions about our apartment developments, pricing, or installment plans? Connect directly with our Senior Property Advisors for personalized service and private site tours."
+        badge="Direct Developer Support • Priority Inquiries"
+        breadcrumbs={[{ label: "Contact Us" }]}
+        bgImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Direct Advisor Hotline: 0938125777",
+          "Fast Response via WhatsApp",
+          "Sarbet Head Office Showroom",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import StatsCounter from "@/components/StatsCounter";
 import { useBooking } from "@/context/BookingContext";
+import InnerHero from "@/components/InnerHero";
 import {
   Target,
   Eye,
@@ -60,21 +61,21 @@ export default function AboutUsPage() {
   ];
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Who We Are
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
-            About Temer Property
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Transforming the Ethiopian real estate landscape with architectural precision, structural reliability, and customer-first integrity since 2010 EC.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="About Temer Property"
+        subtitle="Transforming the Ethiopian real estate landscape with architectural precision, structural reliability, and customer-first integrity since 2010 EC. 10+ completed projects and over 350+ happy families."
+        badge="Who We Are • Developer Legacy"
+        breadcrumbs={[{ label: "About Us" }]}
+        bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Founded in 2010 EC",
+          "10+ Landmark Completed Projects",
+          "350+ Units Successfully Handed Over",
+          "Zero Broker Commission",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Story Section */}

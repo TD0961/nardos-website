@@ -3,13 +3,15 @@
 import React, { useState } from "react";
 import { properties } from "@/data/properties";
 import PropertyCard from "@/components/PropertyCard";
-import { Search, Home, CheckCircle2 } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
+import { Search, Home } from "lucide-react";
 
 export default function PropertiesStandardListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedArea, setSelectedArea] = useState("All");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedBedrooms, setSelectedBedrooms] = useState("All");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("All");
   const [sortBy, setSortBy] = useState("featured");
 
   const filtered = properties.filter((p) => {
@@ -36,6 +38,20 @@ export default function PropertiesStandardListPage() {
     if (selectedBedrooms !== "All" && p.bedrooms !== parseInt(selectedBedrooms)) {
       return false;
     }
+    if (selectedPriceRange !== "All") {
+      if (selectedPriceRange === "under-10m" && p.priceNumeric >= 10000000) return false;
+      if (
+        selectedPriceRange === "10m-15m" &&
+        (p.priceNumeric < 10000000 || p.priceNumeric > 15000000)
+      )
+        return false;
+      if (
+        selectedPriceRange === "15m-20m" &&
+        (p.priceNumeric < 15000000 || p.priceNumeric > 20000000)
+      )
+        return false;
+      if (selectedPriceRange === "above-20m" && p.priceNumeric <= 20000000) return false;
+    }
     return true;
   });
 
@@ -50,38 +66,27 @@ export default function PropertiesStandardListPage() {
   const areas = ["All", "Sarbet", "Aware", "Ayat", "Gelan", "Garment", "Piyassa", "Bulgaria"];
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
-      {/* Page Header */}
-      <div className="bg-[#181d24] text-white py-14 mb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Temer Property Portfolio
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Available Apartments & Penthouses
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Browse our comprehensive collection of premium apartments and commercial real estate across Addis Ababa. Transparent pricing, 15% down payment options, and milestone installments.
-          </p>
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-300">
-            <span className="flex items-center gap-1.5 text-[#84A441]">
-              <CheckCircle2 className="w-4 h-4" /> 100% Free Public Access
-            </span>
-            <span>•</span>
-            <span>No Form Registration Needed</span>
-            <span>•</span>
-            <span>Direct WhatsApp & Call Support</span>
-          </div>
-        </div>
-      </div>
+    <div className="bg-gray-50 min-h-screen pb-20">
+      {/* High-Impact Hero Section */}
+      <InnerHero
+        title="Available Apartments & Penthouses"
+        subtitle="Explore our verified collection of luxury apartments, penthouses, and commercial retail shops across prime Addis Ababa neighborhoods. 100% direct developer pricing with 15% down payment and 36-month interest-free installments."
+        badge="Temer Property • Portfolio & Listings"
+        breadcrumbs={[{ label: "Properties" }]}
+        bgImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "100% Free Public Pricing Access",
+          "15% Down Payment & 36-Mo Installments",
+          "Direct Senior Advisor: 0938125777",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 mb-8 -mt-6 relative z-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 items-center">
             {/* Search Input */}
-            <div className="relative">
+            <div className="relative lg:col-span-2">
               <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
               <input
                 type="text"
@@ -108,16 +113,18 @@ export default function PropertiesStandardListPage() {
               </select>
             </div>
 
-            {/* Category Filter */}
+            {/* Price Range Filter */}
             <div>
               <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] bg-gray-50/50"
+                value={selectedPriceRange}
+                onChange={(e) => setSelectedPriceRange(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] bg-gray-50/50 font-medium text-gray-700"
               >
-                <option value="All">All Categories</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Commercial">Commercial / Shop</option>
+                <option value="All">All Budgets</option>
+                <option value="under-10m">Under 10M ETB</option>
+                <option value="10m-15m">10M - 15M ETB</option>
+                <option value="15m-20m">15M - 20M ETB</option>
+                <option value="above-20m">20M+ ETB</option>
               </select>
             </div>
 
@@ -180,6 +187,7 @@ export default function PropertiesStandardListPage() {
                 setSelectedArea("All");
                 setSelectedCategory("All");
                 setSelectedBedrooms("All");
+                setSelectedPriceRange("All");
               }}
               className="bg-[#84A441] text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-[#6e8a32] transition-colors"
             >

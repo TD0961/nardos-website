@@ -73,7 +73,7 @@ export default function BookingModal() {
           </div>
           <h2 className="text-2xl font-bold">Schedule an Optional Consultation</h2>
           <p className="text-white/90 text-xs sm:text-sm mt-1">
-            Free site tours and personalized payment plans • Direct communication with Nardos
+            Free site tours and personalized payment plans • Direct consultation with Senior Property Advisors & Developer Sales Team
           </p>
         </div>
 

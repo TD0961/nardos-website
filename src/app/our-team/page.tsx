@@ -3,24 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { leadership, management } from "@/data/team";
 import { Phone } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
 
 export default function OurTeamPage() {
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Leadership & Vision
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Our Management <span className="text-[#84A441]">Team</span>
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Meet the experienced visionary leaders, engineers, and executives guiding Temer Property toward architectural innovation and reliable delivery.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Executive Leadership & Management"
+        subtitle="Meet the experienced visionary leaders, engineers, and executives guiding Temer Property toward architectural excellence and reliable handover delivery."
+        badge="Leadership & Vision • Company Direction"
+        breadcrumbs={[{ label: "Our Team" }]}
+        bgImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Executive Board & Founders",
+          "Decades of Collective Real Estate Mastery",
+          "Dedicated Construction & Legal Departments",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Executive Founders Section */}

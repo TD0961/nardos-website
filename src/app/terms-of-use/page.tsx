@@ -1,16 +1,20 @@
 import React from "react";
+import InnerHero from "@/components/InnerHero";
 
 export default function TermsOfUsePage() {
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
-            Terms Of Use
-          </h1>
-          <p className="text-gray-400 text-sm">Last updated: 2026</p>
-        </div>
-      </div>
+    <div className="bg-gray-50 min-h-screen pb-20">
+      <InnerHero
+        title="Terms of Use"
+        subtitle="Please review the terms and conditions governing the use of the Temer Property website and property information services."
+        badge="Legal & Compliance • Terms of Service"
+        breadcrumbs={[{ label: "Terms of Use" }]}
+        highlights={[
+          "Fair & Transparent Information",
+          "Official Contract Precedence",
+          "Ethiopian Legal Compliance",
+        ]}
+      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm prose text-gray-700 leading-relaxed text-sm sm:text-base space-y-6">

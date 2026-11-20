@@ -10,6 +10,7 @@ import {
   Mail,
   CheckCircle2,
 } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
 
 export default function JobPortalPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,21 +29,20 @@ export default function JobPortalPage() {
   });
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Careers at Temer Property
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Find Your Dream Job
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Explore exciting career opportunities with Temer Property in Addis Ababa. Join our team and build your future.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Career Opportunities at Temer Property"
+        subtitle="Join our dynamic team of engineers, architects, marketing directors, and property specialists shaping modern Addis Ababa."
+        badge="Careers & Culture • Join Our Mission"
+        breadcrumbs={[{ label: "Job Portal" }]}
+        bgImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Competitive Salary Packages",
+          "Professional Development & Training",
+          "Equal Opportunity Employer",
+        ]}
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search & Filter Bar */}

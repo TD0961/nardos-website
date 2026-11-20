@@ -5,6 +5,7 @@ import Image from "next/image";
 import { salesOfficers } from "@/data/team";
 import { useBooking } from "@/context/BookingContext";
 import { Phone, Search, MessageSquare, ShieldCheck } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
 
 export default function SalesOfficersPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,21 +16,20 @@ export default function SalesOfficersPage() {
   );
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Property Advisory
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Sales Officers & Consultants
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Connect directly with our dedicated real estate advisors for detailed unit layouts, pricing options, and private site tours.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Sales Consultants & Property Advisors"
+        subtitle="Connect directly with our dedicated real estate advisors for detailed unit layouts, pricing options, and private site tours. Zero third-party broker markups."
+        badge="Property Advisory • Direct Developer Support"
+        breadcrumbs={[{ label: "Sales & Advisory" }]}
+        bgImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Direct Advisor Hotline: 0938125777",
+          "One-on-One Investment Guidance",
+          "Free Site Inspections Available",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search Bar */}

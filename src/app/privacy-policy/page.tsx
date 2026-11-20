@@ -1,16 +1,20 @@
 import React from "react";
+import InnerHero from "@/components/InnerHero";
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
-            Privacy Policy
-          </h1>
-          <p className="text-gray-400 text-sm">Last updated: 2026</p>
-        </div>
-      </div>
+    <div className="bg-gray-50 min-h-screen pb-20">
+      <InnerHero
+        title="Privacy Policy"
+        subtitle="We value your trust and protect your personal information with strict confidentiality and security protocols."
+        badge="Trust & Security • Data Protection"
+        breadcrumbs={[{ label: "Privacy Policy" }]}
+        highlights={[
+          "Zero Data Selling or Trading",
+          "Confidential Buyer Inquiries",
+          "Encrypted Communications",
+        ]}
+      />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm prose text-gray-700 leading-relaxed text-sm sm:text-base space-y-6">

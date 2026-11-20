@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import { Calendar, User, Search, ArrowRight } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
 
 export default function BlogListPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,21 +24,20 @@ export default function BlogListPage() {
   });
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            News & Market Insights
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Temer Property Blog
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Explore articles on real estate investments in Ethiopia, handover announcements, buyer tips, and corporate social responsibility.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Real Estate Insights & News"
+        subtitle="Explore authoritative articles on real estate investments in Ethiopia, handover announcements, buyer tips, financing guides, and market trends."
+        badge="News & Market Insights • Expert Guides"
+        breadcrumbs={[{ label: "Blog & Insights" }]}
+        bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Market Trends & Legal Guides",
+          "Project Handover Reports",
+          "Diaspora Investment Insights",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search & Category Pills */}

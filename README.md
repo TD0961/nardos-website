@@ -90,7 +90,7 @@ The project is fully pre-configured for one-click deployment on [Vercel](https:/
    git push origin main
    ```
 2. Go to [vercel.com/new](https://vercel.com/new).
-3. Import your repository (`nardos-website`).
+3. Import your repository (`temer-properties` or your connected repository).
 4. Click **Deploy**. Vercel will automatically detect **Next.js** and build the project with zero additional configuration.
 
 ### Option B: Via Vercel CLI

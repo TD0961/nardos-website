@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { MapPin, Clock, Video, ArrowRight, CheckCircle2 } from "lucide-react";
+import { MapPin, Clock, Video, ArrowRight } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
+import InnerHero from "@/components/InnerHero";
 
 export default function ConstructionUpdatePage() {
   const [selectedStatus, setSelectedStatus] = useState<string>("All");
@@ -16,29 +17,20 @@ export default function ConstructionUpdatePage() {
       : projects.filter((p) => p.status === selectedStatus);
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Transparency & Progress
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            Construction Updates & Handover Schedules
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Stay up to date with ongoing construction milestones, structural progress, and handover timelines across all Temer Property project sites.
-          </p>
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-300">
-            <span className="flex items-center gap-1 text-[#84A441]">
-              <CheckCircle2 className="w-4 h-4" /> 100% Free Public Verification
-            </span>
-            <span>•</span>
-            <span>Site Visits Available 6 Days a Week</span>
-          </div>
-        </div>
-      </div>
+      <InnerHero
+        title="Construction Updates & Handover Schedules"
+        subtitle="Stay up to date with ongoing construction milestones, structural progress, and handover timelines across all Temer Property project sites. We maintain rigorous photographic and engineering logs for full transparency."
+        badge="Transparency & Progress • Live Project Milestones"
+        breadcrumbs={[{ label: "Construction Updates" }]}
+        bgImage="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "100% Free Public Verification",
+          "On-Site Visits Available 6 Days a Week",
+          "Direct Senior Advisor: 0938125777",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Status Filter Tabs */}

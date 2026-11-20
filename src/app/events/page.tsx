@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import { Calendar, ArrowRight } from "lucide-react";
+import InnerHero from "@/components/InnerHero";
 
 export default function EventsPage() {
   const events = posts.filter(
@@ -13,21 +14,20 @@ export default function EventsPage() {
   );
 
   return (
-    <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
-      <div className="bg-[#181d24] text-white py-16 mb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-            Happenings & Announcements
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
-            News & Events
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Catch up on the latest real estate expos, handover ceremonies, community partnerships, and company updates.
-          </p>
-        </div>
-      </div>
+      <InnerHero
+        title="Real Estate Events & Handover Ceremonies"
+        subtitle="Catch up on the latest property expos, ribbon-cutting ceremonies, community partnerships, and customer appreciation milestones."
+        badge="Happenings & Announcements • Corporate Milestones"
+        breadcrumbs={[{ label: "Events & Expos" }]}
+        bgImage="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Official Project Handovers",
+          "Property Exhibitions & Expos",
+          "Community & Partnership News",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
