@@ -7,6 +7,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import MobileActionBar from "@/components/MobileActionBar";
 import Analytics from "@/components/Analytics";
 import { BookingProvider } from "@/context/BookingContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://temerproperties.com"),
@@ -100,14 +101,16 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900 antialiased selection:bg-[#84A441] selection:text-white pb-14 md:pb-0">
         <Analytics />
-        <BookingProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <BookingModal />
-          <FloatingWhatsApp />
-          <MobileActionBar />
-        </BookingProvider>
+        <LanguageProvider>
+          <BookingProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <BookingModal />
+            <FloatingWhatsApp />
+            <MobileActionBar />
+          </BookingProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

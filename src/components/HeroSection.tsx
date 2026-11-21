@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { useBooking } from "@/context/BookingContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { Phone, Search, MapPin, Home, Bed, ArrowRight, Play, Pause } from "lucide-react";
 import { trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
 
@@ -13,6 +14,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const { openBooking } = useBooking();
+  const { t } = useLanguage();
 
   const [area, setArea] = useState("");
   const [category, setCategory] = useState("");
@@ -86,12 +88,12 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-auto w-full text-center">
         <div className="inline-block animate-fade-in">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#84A441]/25 text-[#84A441] border border-[#84A441]/40 text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-md mb-4">
-            Ethiopia&apos;s Leading Real Estate Developer
+            {t("heroBadge")}
           </span>
         </div>
 
         <h4 className="text-white/90 text-sm sm:text-xl lg:text-2xl font-light tracking-[0.25em] uppercase mb-3 drop-shadow-md">
-          MAKE YOUR NEXT MOVE WITH US
+          {t("heroTitle")}
         </h4>
 
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6 drop-shadow-lg">
@@ -99,7 +101,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
         </h1>
 
         <p className="max-w-2xl mx-auto text-gray-200 text-sm sm:text-base md:text-lg mb-8 leading-relaxed drop-shadow">
-          Discover modern luxury apartments and prime commercial centers across Addis Ababa. 15% down payment, flexible 36-month milestone installments, and direct title deeds.
+          {t("heroSubtitle")}
         </p>
 
         {/* CTA Buttons: Call, WhatsApp & Free Site Visit */}

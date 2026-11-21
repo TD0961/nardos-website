@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 import {
   Phone,
   Mail,
@@ -16,6 +19,7 @@ import {
 } from "./SocialIcons";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const whatsappUrl =
     "https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20am%20interested%20in%20your%20luxury%20apartments.";
 
@@ -29,7 +33,7 @@ export default function Footer() {
               Temer Property – Leading Real Estate Developer in Addis Ababa
             </h4>
             <p className="text-gray-300 text-sm leading-relaxed pr-0 lg:pr-6">
-              Temer Property is a premier real estate developer in Addis Ababa, Ethiopia, delivering state-of-the-art apartments with high-end architecture, prime locations in Sarbet and Aware, transparent pricing, and flexible payment plans. All apartment listings and floor plans are completely open and accessible to all visitors.
+              {t("footerAbout")}
             </p>
             <div className="flex items-center gap-2 text-xs text-[#84A441] pt-1">
               <CheckCircle2 className="w-4 h-4 flex-shrink-0" />

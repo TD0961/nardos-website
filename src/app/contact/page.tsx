@@ -1,25 +1,66 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Clock, CheckCircle, Send, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { properties } from "@/data/properties";
+import {
+  Phone,
+  MapPin,
+  Calendar,
+  Clock,
+  CheckCircle,
+  Send,
+  Building,
+  Bed,
+  Bath,
+  ChevronRight,
+  Home,
+} from "lucide-react";
 import { trackInquirySubmit, trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
-import InnerHero from "@/components/InnerHero";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [scheduleShowing, setScheduleShowing] = useState(false);
+  const [scheduleDate, setScheduleDate] = useState("");
+  const [scheduleHour, setScheduleHour] = useState("09:00");
   const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState<string>("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    subject: "",
-    message: "",
+    comment: "",
   });
+
+  const latestListings = properties.slice(0, 3);
+
+  const hoursList = [
+    "07:00", "07:15", "07:30", "07:45",
+    "08:00", "08:15", "08:30", "08:45",
+    "09:00", "09:15", "09:30", "09:45",
+    "10:00", "10:15", "10:30", "10:45",
+    "11:00", "11:15", "11:30", "11:45",
+    "12:00", "12:15", "12:30", "12:45",
+    "13:00", "13:15", "13:30", "13:45",
+    "14:00", "14:15", "14:30", "14:45",
+    "15:00", "15:15", "15:30", "15:45",
+    "16:00", "16:15", "16:30", "16:45",
+    "17:00", "17:15", "17:30", "17:45",
+    "18:00", "18:15", "18:30", "18:45",
+    "19:00", "19:15", "19:30", "19:45",
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const messageDetails = `${formData.comment}${
+      scheduleShowing
+        ? `\n\n[Requested Tour Schedule: Date ${scheduleDate || "Flexible"}, Time: ${scheduleHour}]`
+        : ""
+    }`;
 
     try {
       const res = await fetch("/api/inquiry", {
@@ -29,8 +70,10 @@ export default function ContactPage() {
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
-          property: formData.subject || "Contact Page Inquiry",
-          message: formData.message,
+          property: scheduleShowing
+            ? `Site Tour Booking (${scheduleDate} at ${scheduleHour})`
+            : "General Contact Inquiry",
+          message: messageDetails,
         }),
       });
 
@@ -42,7 +85,9 @@ export default function ContactPage() {
       setSubmitted(true);
     } catch {
       const text = encodeURIComponent(
-        `*New Contact Message - Temer Property*\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
+        `*New Message - Temer Property*\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n${
+          scheduleShowing ? `Schedule Tour: ${scheduleDate} at ${scheduleHour}\n` : ""
+        }Message: ${formData.comment}`
       );
       setWhatsappRedirectUrl(`https://wa.me/251938125777?text=${text}`);
       setSubmitted(true);
@@ -51,179 +96,223 @@ export default function ContactPage() {
     }
   };
 
-  const directWhatsAppUrl =
-    "https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20would%20like%20to%20discuss%20available%20apartments.";
-
   return (
-    <div className="bg-gray-50 min-h-screen pb-20">
-      {/* Page Hero Header */}
-      <InnerHero
-        title="Contact Temer Property"
-        subtitle="Have questions about our apartment developments, pricing, or installment plans? Connect directly with our Senior Property Advisors for personalized service and private site tours."
-        badge="Direct Developer Support • Priority Inquiries"
-        breadcrumbs={[{ label: "Contact Us" }]}
-        bgImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&auto=format&fit=crop&q=80"
-        highlights={[
-          "Direct Advisor Hotline: 0938125777",
-          "Fast Response via WhatsApp",
-          "Sarbet Head Office Showroom",
-        ]}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Contact Details (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
-              <h2 className="text-xl font-bold text-gray-900 border-b border-gray-100 pb-3">
-                Head Office & Inquiries
-              </h2>
-
-              <div className="space-y-4 text-sm text-gray-700">
-                {/* Clickable Call */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase">Personal Contact Phone</h4>
-                    <a
-                      href="tel:0938125777"
-                      onClick={() => trackCallClick("contact_page")}
-                      className="text-lg font-extrabold text-[#84A441] hover:underline"
-                    >
-                      0938125777
-                    </a>
-                    <span className="block text-xs text-gray-400">Clickable direct call option</span>
-                  </div>
-                </div>
-
-                {/* Direct WhatsApp */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase">Direct WhatsApp</h4>
-                    <a
-                      href={directWhatsAppUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick("contact_page")}
-                      className="text-base font-bold text-[#25D366] hover:underline block"
-                    >
-                      Chat on WhatsApp Now
-                    </a>
-                    <span className="block text-xs text-gray-400">Instant answers from advisor</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase">Official Email</h4>
-                    <a href="mailto:info@temerproperties.com" className="font-semibold text-gray-900 hover:text-[#84A441]">
-                      info@temerproperties.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase">Office Location</h4>
-                    <p className="font-medium text-gray-900">
-                      Sarbet to Kera Road, Woldemaryam Building, Addis Ababa, Ethiopia
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase">Working Hours</h4>
-                    <p className="font-medium text-gray-900">
-                      Monday – Saturday: 8:30 AM – 5:30 PM
-                    </p>
-                    <p className="text-xs text-gray-500">Sunday & Holidays: Closed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div className="bg-[#fbfcfa] min-h-screen pt-24 pb-20">
+      {/* Top Breadcrumb Bar matching temerproperties.com */}
+      <div className="bg-white border-b border-gray-200 py-3.5 mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs text-gray-500">
+          <div className="flex items-center space-x-2">
+            <Link href="/" className="hover:text-[#84A441] flex items-center gap-1">
+              <Home className="w-3.5 h-3.5" />
+              <span>Home</span>
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+            <span className="text-gray-900 font-semibold">Contact Us</span>
           </div>
 
-          {/* Interactive Form (7 cols) */}
-          <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-sm">
+          <a
+            href="tel:0938125777"
+            onClick={() => trackCallClick("contact_topbar")}
+            className="hidden sm:inline-flex items-center gap-1.5 font-bold text-[#84A441] hover:underline"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>Hotline: 0938125777</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Content & Sidebar Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Company Info, Hotline Banner, Original Text & Form (8 cols) */}
+          <div className="lg:col-span-8 space-y-8">
+            {/* 1. Company Header Box */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-4">
+              <h1 className="text-2xl sm:text-3xl font-black text-[#2d3e1e]">
+                Temer Properties
+              </h1>
+
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <MapPin className="w-4 h-4 text-[#84A441] flex-shrink-0" />
+                <span>Sarbet to Kera Road, Woldemaryam Building, Addis Ababa, Ethiopia</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-gray-100 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 font-medium">Mobile:</span>
+                  <a
+                    href="tel:0938125777"
+                    onClick={() => trackCallClick("contact_company_mobile")}
+                    className="font-bold text-[#84A441] hover:underline"
+                  >
+                    0938125777
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 font-medium">Email:</span>
+                  <a
+                    href="mailto:info@temerproperties.com"
+                    className="font-semibold text-gray-700 hover:text-[#84A441]"
+                  >
+                    info@temerproperties.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Prominent Green Hotline Banner matching temerproperties.com */}
+              <div className="pt-2">
+                <a
+                  href="tel:0938125777"
+                  onClick={() => trackCallClick("contact_green_hotline")}
+                  className="bg-[#84A441] hover:bg-[#739134] text-white p-4 sm:p-5 text-center rounded-xl font-black text-lg sm:text-xl tracking-wide flex items-center justify-center gap-3 shadow-md transition-all active:scale-98"
+                >
+                  <Phone className="w-6 h-6 animate-pulse" />
+                  <span>HOTLINE – 0938125777</span>
+                </a>
+              </div>
+            </div>
+
+            {/* 2. Original Descriptive Text Block from temerproperties.com */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm leading-relaxed text-gray-700 text-sm sm:text-base space-y-4">
+              <p>
+                Temer Real Estate, located on Sarbet to Kera Road, Woldemaryam Building, is your trusted partner in the real estate market in Addis Ababa, Ethiopia. We specialize in offering high-quality{" "}
+                <strong className="text-gray-900 font-bold">apartments for sale in Addis Ababa</strong>,{" "}
+                <strong className="text-gray-900 font-bold">houses for sale</strong>, and{" "}
+                <strong className="text-gray-900 font-bold">commercial spaces in Addis Ababa</strong>
+                —all delivered with a focus on quality and timeliness.
+              </p>
+              <p>
+                Whether you are searching for your next home or investing in{" "}
+                <strong className="text-gray-900 font-bold">real estate in Ethiopia</strong>, our experienced team is here to support you. From finding the perfect house for sale to exploring premium commercial space in Addis Ababa, we offer a seamless, efficient experience backed by deep local expertise.
+              </p>
+              <p>
+                Temer Properties is one of the top real estate developers in Addis Ababa, Ethiopia—trusted for delivering superior residential and commercial projects. Reach out today and let us help you find your ideal property.
+              </p>
+            </div>
+
+            {/* 3. Interactive Contact Form ("Contact Me") */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+              <div className="border-b border-gray-200 pb-4 mb-6 flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Contact Me</h3>
+                  <p className="text-xs text-gray-500">Send an inquiry directly to our sales advisory team.</p>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                  <span>Direct Advisor Response</span>
+                </div>
+              </div>
+
               {submitted ? (
-                <div className="text-center py-12">
+                <div className="text-center py-8">
                   <CheckCircle className="w-16 h-16 text-[#84A441] mx-auto mb-4 animate-bounce" />
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Inquiry Dispatched!</h3>
-                  <p className="text-gray-600 mb-6 text-sm max-w-md mx-auto">
-                    Thank you for reaching out. We have received your message. You can also chat directly on WhatsApp right now for an immediate response.
+                  <h4 className="text-2xl font-black text-gray-900 mb-2">Message Sent Successfully!</h4>
+                  <p className="text-gray-600 text-sm max-w-md mx-auto mb-6">
+                    Thank you for reaching out to Temer Property. We have received your message and our advisor will connect with you shortly.
                   </p>
                   {whatsappRedirectUrl && (
                     <a
                       href={whatsappRedirectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick("contact_page_submit_whatsapp")}
-                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all"
+                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md transition-all"
                     >
-                      <span>Continue via WhatsApp</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <span>Continue on WhatsApp</span>
+                      <Send className="w-4 h-4" />
                     </a>
                   )}
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-gray-100 pb-3 mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">
-                      Send an Optional Inquiry
-                    </h3>
-                    <span className="text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">
-                      Direct to Advisor
-                    </span>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Schedule a Showing Checkbox Toggle */}
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                    <label className="flex items-center gap-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={scheduleShowing}
+                        onChange={(e) => setScheduleShowing(e.target.checked)}
+                        className="w-4 h-4 text-[#84A441] rounded border-gray-300 focus:ring-[#84A441]"
+                      />
+                      <span className="text-sm font-bold text-gray-800">
+                        Schedule a showing / site visit?
+                      </span>
+                    </label>
+
+                    {/* Schedule Date & Hour Picker if Checked */}
+                    {scheduleShowing && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 pt-4 border-t border-gray-200">
+                        <div>
+                          <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                            Preferred Date
+                          </label>
+                          <div className="relative">
+                            <Calendar className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
+                            <input
+                              type="date"
+                              required={scheduleShowing}
+                              value={scheduleDate}
+                              onChange={(e) => setScheduleDate(e.target.value)}
+                              className="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441]"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                            Preferred Time
+                          </label>
+                          <div className="relative">
+                            <Clock className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
+                            <select
+                              value={scheduleHour}
+                              onChange={(e) => setScheduleHour(e.target.value)}
+                              className="w-full pl-9 pr-3 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441]"
+                            >
+                              {hoursList.map((hr) => (
+                                <option key={hr} value={hr}>
+                                  {hr}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
+                  {/* Name Input */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                      Full Name *
+                    <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                      Your Name *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Almaz Bekele"
+                      placeholder="Full Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#84A441]"
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] focus:bg-white"
                     />
                   </div>
 
+                  {/* Email & Phone Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                        Email Address
+                      <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                        Email Address *
                       </label>
                       <input
                         type="email"
+                        required
                         placeholder="you@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#84A441]"
+                        className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] focus:bg-white"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
+                      <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
                         Phone Number *
                       </label>
                       <input
@@ -232,77 +321,175 @@ export default function ContactPage() {
                         placeholder="09... / +251..."
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#84A441]"
+                        className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] focus:bg-white"
                       />
                     </div>
                   </div>
 
+                  {/* Comment / Message Textarea */}
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                      Project of Interest
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Sarbet City Plus / Aware Apartments"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#84A441]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">
-                      Message *
+                    <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                      Message / Comment *
                     </label>
                     <textarea
-                      rows={4}
+                      rows={5}
                       required
-                      placeholder="I am interested in pricing, floor plans, and installment schedules..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#84A441]"
+                      placeholder="I would like more information about apartment pricing and payment plans..."
+                      value={formData.comment}
+                      onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] focus:bg-white"
                     ></textarea>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full bg-[#84A441] hover:bg-[#6e8a32] text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>{loading ? "Sending..." : "Submit Inquiry Directly"}</span>
-                  </button>
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full sm:w-auto bg-[#84A441] hover:bg-[#739134] text-white font-bold py-3 px-8 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                    >
+                      <Send className="w-4 h-4" />
+                      <span>{loading ? "Sending..." : "Send Email"}</span>
+                    </button>
+
+                    <a
+                      href="https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20would%20like%20to%20inquire%20about%20your%20apartments."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick("contact_page_form")}
+                      className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white font-bold py-3 px-8 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                    >
+                      <span>Chat on WhatsApp</span>
+                    </a>
+                  </div>
                 </form>
               )}
             </div>
-          </div>
-        </div>
 
-        {/* Map Section */}
-        <div className="mt-14 bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
-          <div className="p-6 bg-white border-b border-gray-100 flex items-center justify-between">
-            <div>
-              <h3 className="text-base font-bold text-gray-900">Visit Our Main Office</h3>
-              <p className="text-xs text-gray-500">Woldemaryam Building, Sarbet to Kera Road, Addis Ababa</p>
+            {/* 4. Embedded Google Map */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Our Office Location</h3>
+              <p className="text-xs text-gray-500 mb-4">
+                Woldemaryam Building, Sarbet to Kera Road, Addis Ababa, Ethiopia.
+              </p>
+              <div className="aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200 shadow-inner">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.660144955776!2d38.74205837591632!3d8.995079289455325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b854e4df5b9e5%3A0xc3cf0205e44ba2eb!2sSarbet%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
-            <a
-              href="https://maps.app.goo.gl/3DraLh14fweui2oLA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold text-[#84A441] hover:underline"
-            >
-              Open in Google Maps ↗
-            </a>
           </div>
-          <div className="aspect-[21/9] min-h-[350px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.660144955776!2d38.74205837591632!3d8.995079289455325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b854e4df5b9e5%3A0xc3cf0205e44ba2eb!2sSarbet%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-            ></iframe>
+
+          {/* Right Column: Sticky Sidebar matching Houzez/WpResidence theme (4 cols) */}
+          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+            {/* Promo Banner Card */}
+            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
+              <div className="relative aspect-[16/10] bg-gray-100">
+                <Image
+                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop&q=80"
+                  alt="Temer Property Promotion"
+                  fill
+                  sizes="350px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5 flex flex-col justify-end text-white">
+                  <span className="text-[11px] font-bold text-[#84A441] uppercase tracking-wider">
+                    Prime Investment
+                  </span>
+                  <h4 className="text-base font-extrabold leading-snug">
+                    Sarbet City Plus Luxury Apartments
+                  </h4>
+                  <p className="text-xs text-gray-300 mt-1">
+                    15% Down Payment • 36 Months Delivery
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* "Latest Listings" Widget matching temerproperties.com */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <h3 className="text-base font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">
+                Latest Listings
+              </h3>
+
+              <div className="space-y-4">
+                {latestListings.map((prop) => (
+                  <Link
+                    key={prop.id}
+                    href={`/properties/${prop.slug}`}
+                    className="flex gap-3 group items-center"
+                  >
+                    <div className="relative w-20 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                      <Image
+                        src={prop.image}
+                        alt={prop.title}
+                        fill
+                        sizes="80px"
+                        className="object-cover group-hover:scale-105 transition-transform"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#84A441] transition-colors truncate">
+                        {prop.title}
+                      </h4>
+                      <span className="text-xs font-extrabold text-[#84A441] block">
+                        {prop.price}
+                      </span>
+                      <div className="flex items-center gap-2 text-[10px] text-gray-400 mt-0.5">
+                        <span className="flex items-center gap-0.5">
+                          <Bed className="w-3 h-3 text-[#84A441]" />
+                          {prop.bedrooms}
+                        </span>
+                        <span>•</span>
+                        <span className="flex items-center gap-0.5">
+                          <Bath className="w-3 h-3 text-[#84A441]" />
+                          {prop.bathrooms}
+                        </span>
+                        <span>•</span>
+                        <span>{prop.size}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="pt-4 mt-4 border-t border-gray-100">
+                <Link
+                  href="/properties-standard-list"
+                  className="text-xs font-bold text-[#84A441] hover:underline flex items-center justify-between"
+                >
+                  <span>View All Listings</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Quick Assistance Card */}
+            <div className="bg-[#181d24] text-white rounded-2xl p-6 shadow-sm border border-gray-800 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#84A441] uppercase tracking-wider">
+                <Building className="w-4 h-4" />
+                <span>Need Direct Assistance?</span>
+              </div>
+              <h4 className="text-base font-extrabold">Speak with Our Lead Advisor</h4>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Connect directly for personalized quotes, cash discount calculations, and immediate floor plan brochures.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="tel:0938125777"
+                  onClick={() => trackCallClick("contact_sidebar_call")}
+                  className="w-full bg-[#84A441] hover:bg-[#739134] text-white py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call 0938125777</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

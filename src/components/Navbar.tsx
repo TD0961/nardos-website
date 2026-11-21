@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
   Phone,
   ChevronDown,
@@ -24,6 +26,7 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const { openBooking } = useBooking();
+  const { t } = useLanguage();
 
   const isHome = pathname === "/";
 
@@ -92,7 +95,7 @@ export default function Navbar() {
                   : "text-white/90 hover:text-white"
               }`}
             >
-              Home
+              {t("navHome")}
             </Link>
 
             {/* Projects Dropdown */}
@@ -110,7 +113,7 @@ export default function Navbar() {
                     : "text-white/90 group-hover:text-white"
                 }`}
               >
-                Projects{" "}
+                {t("navProjects")}{" "}
                 <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="absolute top-full left-0 w-64 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
@@ -119,14 +122,14 @@ export default function Navbar() {
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Building className="w-4 h-4 text-[#84A441]" />
-                  Properties Standard List
+                  {t("navPropertiesList")}
                 </Link>
                 <Link
                   href="/half-map-properties-list"
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Compass className="w-4 h-4 text-[#84A441]" />
-                  Properties With Map
+                  {t("navPropertiesMap")}
                 </Link>
                 <div className="border-t border-gray-100 my-1"></div>
                 <Link
@@ -134,7 +137,7 @@ export default function Navbar() {
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Clock className="w-4 h-4 text-[#84A441]" />
-                  Construction Updates
+                  {t("navConstructionUpdates")}
                 </Link>
               </div>
             </div>
@@ -149,7 +152,7 @@ export default function Navbar() {
                   : "text-white/90 hover:text-white"
               }`}
             >
-              About Us
+              {t("navAboutUs")}
             </Link>
 
             {/* Events / News */}
@@ -167,7 +170,7 @@ export default function Navbar() {
                     : "text-white/90 group-hover:text-white"
                 }`}
               >
-                Events{" "}
+                {t("navEvents")}{" "}
                 <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="absolute top-full left-0 w-52 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
@@ -175,13 +178,13 @@ export default function Navbar() {
                   href="/events"
                   className="block px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
-                  News & Events
+                  {t("navNewsEvents")}
                 </Link>
                 <Link
                   href="/blog-list"
                   className="block px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
-                  Insights & Blog
+                  {t("navBlog")}
                 </Link>
               </div>
             </div>
@@ -201,7 +204,7 @@ export default function Navbar() {
                     : "text-white/90 group-hover:text-white"
                 }`}
               >
-                Our Team{" "}
+                {t("navOurTeam")}{" "}
                 <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               <div className="absolute top-full left-0 w-56 bg-white text-gray-800 rounded-xl shadow-xl border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
@@ -210,21 +213,21 @@ export default function Navbar() {
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Users className="w-4 h-4 text-[#84A441]" />
-                  Management Team
+                  {t("navManagement")}
                 </Link>
                 <Link
                   href="/sales-officer"
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Briefcase className="w-4 h-4 text-[#84A441]" />
-                  Sales Officers
+                  {t("navSalesOfficers")}
                 </Link>
                 <Link
                   href="/job-portal"
                   className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-[#84A441]/10 hover:text-[#84A441] transition-colors text-sm"
                 >
                   <Clock className="w-4 h-4 text-[#84A441]" />
-                  Job Portal
+                  {t("navJobPortal")}
                 </Link>
               </div>
             </div>
@@ -239,12 +242,15 @@ export default function Navbar() {
                   : "text-white/90 hover:text-white"
               }`}
             >
-              Contact
+              {t("navContact")}
             </Link>
           </nav>
 
-          {/* Right Action: Clickable Call, WhatsApp & Booking */}
+          {/* Right Action: Clickable Call, WhatsApp, Language & Booking */}
           <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
+            {/* Language Switcher */}
+            <LanguageSwitcher variant="desktop" />
+
             {/* Clickable Call Option */}
             <a
               href="tel:0938125777"
@@ -332,12 +338,17 @@ export default function Navbar() {
             </div>
 
             <div className="py-4 space-y-1">
+              {/* Mobile Language Switcher */}
+              <div className="mb-4">
+                <LanguageSwitcher variant="mobile" />
+              </div>
+
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block py-2.5 text-base font-semibold text-gray-800 hover:text-[#84A441]"
               >
-                Home
+                {t("navHome")}
               </Link>
 
               {/* Mobile Projects */}
