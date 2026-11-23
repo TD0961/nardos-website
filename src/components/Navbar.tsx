@@ -57,23 +57,23 @@ export default function Navbar() {
             : "bg-black/35 backdrop-blur-md text-white py-3.5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Brand Name */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-11 w-32 sm:w-36">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+            <div className="relative h-10 w-9 sm:h-11 sm:w-10">
               <Image
                 src="/images/logo.png"
                 alt="Temer Property"
                 fill
                 priority
-                sizes="(max-width: 640px) 128px, 144px"
+                sizes="(max-width: 640px) 36px, 40px"
                 className={`object-contain transition-all duration-200 ${
                   !scrolled ? "brightness-100" : ""
                 }`}
               />
             </div>
             <span
-              className={`hidden sm:inline-block font-extrabold tracking-wide text-sm ${
+              className={`font-extrabold tracking-wide text-sm sm:text-base ${
                 scrolled ? "text-gray-900" : "text-white"
               }`}
             >
@@ -82,10 +82,10 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 text-[14px] font-medium tracking-wide">
+          <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5 2xl:space-x-2 text-[12px] xl:text-[13.5px] 2xl:text-[14px] font-medium tracking-wide">
             <Link
               href="/"
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-2 py-1.5 xl:px-3 xl:py-2 rounded-md transition-colors ${
                 pathname === "/"
                   ? "text-[#84A441] font-bold"
                   : scrolled
@@ -103,7 +103,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
+                className={`px-2 py-1.5 xl:px-3 xl:py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("properties") || pathname.includes("construction")
                     ? "text-[#84A441] font-bold"
                     : scrolled
@@ -142,7 +142,7 @@ export default function Navbar() {
 
             <Link
               href="/about-us"
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-2 py-1.5 xl:px-3 xl:py-2 rounded-md transition-colors ${
                 pathname === "/about-us"
                   ? "text-[#84A441] font-bold"
                   : scrolled
@@ -160,7 +160,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
+                className={`px-2 py-1.5 xl:px-3 xl:py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("events") || pathname.includes("blog")
                     ? "text-[#84A441] font-bold"
                     : scrolled
@@ -194,7 +194,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
+                className={`px-2 py-1.5 xl:px-3 xl:py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("team") || pathname.includes("sales-officer") || pathname.includes("job")
                     ? "text-[#84A441] font-bold"
                     : scrolled
@@ -232,7 +232,7 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`px-3 py-2 rounded-md transition-colors ${
+              className={`px-2 py-1.5 xl:px-3 xl:py-2 rounded-md transition-colors ${
                 pathname === "/contact" || pathname === "/contact-us-2"
                   ? "text-[#84A441] font-bold"
                   : scrolled
@@ -245,7 +245,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action: Clickable Call, WhatsApp, Language & Booking */}
-          <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
+          <div className="hidden sm:flex items-center space-x-1 xl:space-x-2 2xl:space-x-3 flex-shrink-0">
             {/* Language Switcher */}
             <LanguageSwitcher variant="desktop" />
 
@@ -253,14 +253,14 @@ export default function Navbar() {
             <a
               href="tel:0938125777"
               onClick={() => trackCallClick("navbar_header")}
-              className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`flex items-center gap-1.5 px-2 py-1.5 xl:px-3 xl:py-2 rounded-xl text-xs font-bold transition-all flex-shrink-0 ${
                 scrolled
                   ? "bg-gray-100 hover:bg-gray-200 text-gray-900"
                   : "bg-white/10 hover:bg-white/20 text-white"
               }`}
             >
               <Phone className="w-3.5 h-3.5 text-[#84A441]" />
-              <span>0938125777</span>
+              <span className="hidden md:inline">0938125777</span>
             </a>
 
             {/* Direct WhatsApp Option */}
@@ -269,30 +269,30 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("navbar_header")}
-              className="bg-[#25D366] hover:bg-[#20ba59] text-white p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
+              className="bg-[#25D366] hover:bg-[#20ba59] text-white p-2 xl:px-2.5 xl:py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm flex-shrink-0"
               aria-label="Direct WhatsApp chat"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
-              <span className="hidden md:inline">WhatsApp</span>
+              <span className="hidden 2xl:inline">WhatsApp</span>
             </a>
 
             {/* Inquire CTA */}
             <button
               onClick={() => openBooking()}
-              className="bg-[#84A441] hover:bg-[#6e8a32] text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-sm"
+              className="bg-[#84A441] hover:bg-[#6e8a32] text-white px-2.5 py-1.5 xl:px-3.5 xl:py-2 rounded-xl text-xs font-bold transition-all shadow-sm flex-shrink-0"
             >
               Inquire
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
             <a
               href="tel:0938125777"
               onClick={() => trackCallClick("mobile_nav_quick")}
-              className="p-2 rounded-lg bg-[#84A441] text-white text-xs font-bold flex items-center"
+              className="p-2 rounded-lg bg-[#84A441] text-white text-xs font-bold flex items-center sm:hidden"
               aria-label="Call 0938125777"
             >
               <Phone className="w-4 h-4" />

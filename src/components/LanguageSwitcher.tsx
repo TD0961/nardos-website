@@ -58,15 +58,16 @@ export default function LanguageSwitcher({
   }
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div className="relative inline-block text-left flex-shrink-0" ref={dropdownRef}>
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-gray-200/60 hover:border-[#84A441] bg-white/90 backdrop-blur-sm text-gray-700 hover:text-[#84A441] shadow-sm"
+        className="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 rounded-full text-xs font-bold transition-all border border-gray-200/60 hover:border-[#84A441] bg-white/90 backdrop-blur-sm text-gray-700 hover:text-[#84A441] shadow-sm flex-shrink-0"
         aria-expanded={open}
       >
         <span className="text-sm">{currentLang.flag}</span>
-        <span className="font-semibold">{currentLang.nativeName}</span>
+        <span className="font-semibold hidden xl:inline">{currentLang.nativeName}</span>
+        <span className="font-semibold inline xl:hidden">{currentLang.code.toUpperCase()}</span>
         <ChevronDown className={`w-3 h-3 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
