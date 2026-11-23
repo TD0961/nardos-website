@@ -92,14 +92,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="h-full" data-scroll-behavior="smooth">
+    <html lang="en" className="h-full" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-gray-900 antialiased selection:bg-[#84A441] selection:text-white pb-14 md:pb-0">
+      <body className="min-h-full flex flex-col bg-white text-gray-900 antialiased selection:bg-[#84A441] selection:text-white pb-14 md:pb-0" suppressHydrationWarning>
         <Analytics />
         <LanguageProvider>
           <BookingProvider>
