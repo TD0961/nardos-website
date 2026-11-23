@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import StatsCounter from "@/components/StatsCounter";
 import { useBooking } from "@/context/BookingContext";
+import { useLanguage } from "@/context/LanguageContext";
 import InnerHero from "@/components/InnerHero";
 import {
   Target,
@@ -16,6 +17,7 @@ import {
 export default function AboutUsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const { openBooking } = useBooking();
+  const { t } = useLanguage();
 
   const faqs = [
     {
@@ -64,10 +66,10 @@ export default function AboutUsPage() {
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
       <InnerHero
-        title="About Temer Property"
-        subtitle="Transforming the Ethiopian real estate landscape with architectural precision, structural reliability, and customer-first integrity since 2010 EC. 10+ completed projects and over 350+ happy families."
+        title={t("aboutTitle")}
+        subtitle={t("aboutSubtitle")}
         badge="Who We Are • Developer Legacy"
-        breadcrumbs={[{ label: "About Us" }]}
+        breadcrumbs={[{ label: t("navAboutUs") }]}
         bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "Founded in 2010 EC",
@@ -98,10 +100,10 @@ export default function AboutUsPage() {
 
           <div className="lg:col-span-7 space-y-5">
             <span className="text-[#84A441] text-xs font-bold uppercase tracking-wider">
-              Our Journey
+              {t("ourJourney")}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-snug">
-              Building Trust & Delivering Dream Homes Across Addis Ababa
+              {t("buildingTrust")}
             </h2>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
               Temer Property, also known as Temer Real Estate, was founded in 2010 EC by two visionary individuals with a mission to transform the real estate landscape in Ethiopia. With a focus on delivering state-of-the-art real estate in Ethiopia, especially in Addis Ababa, we have successfully completed over 10 major projects, providing more than 350 quality apartment units and modern homes to our valued customers.
@@ -114,14 +116,14 @@ export default function AboutUsPage() {
                 onClick={() => openBooking()}
                 className="bg-[#84A441] hover:bg-[#6e8a32] text-white px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all"
               >
-                Schedule Site Visit
+                {t("bookTour")}
               </button>
               <a
                 href="tel:0938125777"
                 className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 hover:border-[#84A441] hover:text-[#84A441] px-6 py-3 rounded-full font-semibold text-sm transition-all"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call 0938125777</span>
+                <span>{t("callNow")}</span>
               </a>
             </div>
           </div>
@@ -134,9 +136,9 @@ export default function AboutUsPage() {
             <div className="w-12 h-12 rounded-2xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center mb-6">
               <Target className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">{t("ourMission")}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              To elevate the living experience in Addis Ababa by connecting residents with homes that embody the essence of this vibrant community. From historic neighborhoods to emerging developments, we are committed to showcasing the unique charm and opportunities that Addis Ababa has to offer.
+              {t("ourMissionDesc")}
             </p>
           </div>
 
@@ -145,9 +147,9 @@ export default function AboutUsPage() {
             <div className="w-12 h-12 rounded-2xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center mb-6">
               <Eye className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">{t("ourVision")}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              To redefine the method in which real estate is delivered and experienced in Ethiopia. We aim to be the benchmark developer recognized for architectural innovation, transparency, prompt execution, and long-term customer fulfillment.
+              {t("ourVisionDesc")}
             </p>
           </div>
 
@@ -156,9 +158,9 @@ export default function AboutUsPage() {
             <div className="w-12 h-12 rounded-2xl bg-[#84A441]/10 text-[#84A441] flex items-center justify-center mb-6">
               <HeartHandshake className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Our Values</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">{t("ourValues")}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              United by an appreciation for design and architecture, our team’s personalized approach to real estate advisory is executed with the same meticulous consideration as the properties we represent. We foster relationships built on trust, integrity, and unwavering excellence.
+              {t("ourValuesDesc")}
             </p>
           </div>
         </div>
@@ -173,7 +175,7 @@ export default function AboutUsPage() {
               Proven Track Record
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
-              Delivered Projects
+              {t("deliveredProjects")}
             </h2>
             <p className="text-gray-500 text-sm mt-2">
               A sample of past projects successfully delivered to our esteemed homeowners and retail investors.
@@ -208,10 +210,10 @@ export default function AboutUsPage() {
               Common Questions
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
-              Frequently Asked Questions
+              {t("faqsTitle")}
             </h2>
             <p className="text-gray-500 text-sm mt-2">
-              Everything you need to know about purchasing property, titles, site visits, and payment schedules with Temer Property.
+              {t("faqsSubtitle")}
             </p>
           </div>
 
@@ -245,4 +247,3 @@ export default function AboutUsPage() {
     </div>
   );
 }
-

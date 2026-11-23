@@ -7,9 +7,18 @@ import { projects } from "@/data/projects";
 import { MapPin, Clock, Video, ArrowRight } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ConstructionUpdatePage() {
+  const { t } = useLanguage();
   const [selectedStatus, setSelectedStatus] = useState<string>("All");
+
+  const statusTabs = [
+    { key: "All", labelKey: "allSiteUpdates" },
+    { key: "In Progress", labelKey: "tabInProgress" },
+    { key: "Delivered", labelKey: "tabDelivered" },
+    { key: "Upcoming", labelKey: "tabUpcoming" },
+  ];
 
   const filtered =
     selectedStatus === "All"
@@ -20,10 +29,10 @@ export default function ConstructionUpdatePage() {
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
       <InnerHero
-        title="Construction Updates & Handover Schedules"
-        subtitle="Stay up to date with ongoing construction milestones, structural progress, and handover timelines across all Temer Property project sites. We maintain rigorous photographic and engineering logs for full transparency."
+        title={t("constructionTitle")}
+        subtitle={t("constructionSubtitle")}
         badge="Transparency & Progress • Live Project Milestones"
-        breadcrumbs={[{ label: "Construction Updates" }]}
+        breadcrumbs={[{ label: t("navConstructionUpdates") }]}
         bgImage="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "100% Free Public Verification",
@@ -35,17 +44,17 @@ export default function ConstructionUpdatePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Status Filter Tabs */}
         <div className="flex items-center justify-center gap-2 mb-12 overflow-x-auto pb-2">
-          {["All", "In Progress", "Delivered", "Upcoming"].map((status) => (
+          {statusTabs.map((tab) => (
             <button
-              key={status}
-              onClick={() => setSelectedStatus(status)}
+              key={tab.key}
+              onClick={() => setSelectedStatus(tab.key)}
               className={`px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
-                selectedStatus === status
+                selectedStatus === tab.key
                   ? "bg-[#84A441] text-white shadow-md"
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
               }`}
             >
-              {status === "All" ? "All Site Updates" : status}
+              {t(tab.labelKey)}
             </button>
           ))}
         </div>

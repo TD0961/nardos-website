@@ -1,10 +1,14 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/data/posts";
+import { useLanguage } from "@/context/LanguageContext";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
 export default function BlogSection() {
+  const { t } = useLanguage();
   const featuredPosts = posts.slice(0, 3);
 
   return (
@@ -16,10 +20,10 @@ export default function BlogSection() {
               Real Estate In Ethiopia
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Read From Our Blog
+              {t("readFromOurBlog")}
             </h2>
             <p className="text-gray-500 text-sm mt-2 max-w-xl">
-              Stay informed with real estate market insights, construction progress announcements, and partnership news from Addis Ababa.
+              {t("readFromOurBlogSubtitle")}
             </p>
           </div>
 
@@ -27,7 +31,7 @@ export default function BlogSection() {
             href="/blog-list"
             className="inline-flex items-center gap-2 text-[#84A441] hover:text-[#6e8a32] font-bold text-sm mt-4 md:mt-0 group"
           >
-            <span>View All Articles</span>
+            <span>{t("viewAllArticles")}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -83,7 +87,7 @@ export default function BlogSection() {
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#84A441] group-hover:text-[#6e8a32]"
                   >
-                    <span>Read Article</span>
+                    <span>{t("viewDetails")}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -95,4 +99,3 @@ export default function BlogSection() {
     </section>
   );
 }
-

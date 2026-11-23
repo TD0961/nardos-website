@@ -1,11 +1,15 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import { Calendar, ArrowRight } from "lucide-react";
 import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function EventsPage() {
+  const { t } = useLanguage();
   const events = posts.filter(
     (p) =>
       p.category === "Events & Expo" ||
@@ -17,10 +21,10 @@ export default function EventsPage() {
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
       <InnerHero
-        title="Real Estate Events & Handover Ceremonies"
-        subtitle="Catch up on the latest property expos, ribbon-cutting ceremonies, community partnerships, and customer appreciation milestones."
+        title={t("eventsTitle")}
+        subtitle={t("eventsSubtitle")}
         badge="Happenings & Announcements • Corporate Milestones"
-        breadcrumbs={[{ label: "Events & Expos" }]}
+        breadcrumbs={[{ label: t("navEvents") }]}
         bgImage="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "Official Project Handovers",
@@ -52,13 +56,13 @@ export default function EventsPage() {
               </div>
 
               <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-3">
                   <Calendar className="w-3.5 h-3.5 text-[#84A441]" />
                   <span>{item.date}</span>
                 </div>
 
                 <Link href={`/blog/${item.slug}`}>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#84A441] transition-colors mb-3 line-clamp-2">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#84A441] transition-colors line-clamp-2 mb-3 leading-snug">
                     {item.title}
                   </h3>
                 </Link>
@@ -67,12 +71,12 @@ export default function EventsPage() {
                   {item.excerpt}
                 </p>
 
-                <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
+                <div className="mt-auto pt-3 border-t border-gray-100">
                   <Link
                     href={`/blog/${item.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#84A441] group-hover:text-[#6e8a32]"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#84A441] hover:text-[#6e8a32]"
                   >
-                    <span>Read Details</span>
+                    <span>{t("viewDetails")}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -84,4 +88,3 @@ export default function EventsPage() {
     </div>
   );
 }
-

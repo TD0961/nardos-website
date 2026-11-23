@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import { properties } from "@/data/properties";
 import PropertyCard from "@/components/PropertyCard";
 import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 import { Search, Home } from "lucide-react";
 
 export default function PropertiesStandardListPage() {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedArea, setSelectedArea] = useState("All");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -69,10 +71,10 @@ export default function PropertiesStandardListPage() {
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* High-Impact Hero Section */}
       <InnerHero
-        title="Available Apartments & Penthouses"
-        subtitle="Explore our verified collection of luxury apartments, penthouses, and commercial retail shops across prime Addis Ababa neighborhoods. 100% direct developer pricing with 15% down payment and 36-month interest-free installments."
+        title={t("propertiesTitle")}
+        subtitle={t("propertiesSubtitle")}
         badge="Temer Property • Portfolio & Listings"
-        breadcrumbs={[{ label: "Properties" }]}
+        breadcrumbs={[{ label: t("navPropertiesList") }]}
         bgImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "100% Free Public Pricing Access",
@@ -90,7 +92,7 @@ export default function PropertiesStandardListPage() {
               <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search title, neighborhood..."
+                placeholder={t("searchPlaceholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441]"
@@ -104,7 +106,7 @@ export default function PropertiesStandardListPage() {
                 onChange={(e) => setSelectedArea(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#84A441] bg-gray-50/50"
               >
-                <option value="All">All Neighborhoods</option>
+                <option value="All">{t("allNeighborhoods")}</option>
                 {areas.slice(1).map((a) => (
                   <option key={a} value={a}>
                     {a}

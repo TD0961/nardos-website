@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Column 2: Direct Contact (col-lg-4) */}
           <div className="lg:col-span-4 space-y-4">
             <h4 className="text-lg font-bold text-white tracking-wide border-l-4 border-[#84A441] pl-3">
-              DIRECT CONTACT
+              {t("footerDirectContact")}
             </h4>
             <div className="space-y-3 text-sm text-gray-300">
               <p className="flex items-center gap-2.5">
@@ -55,7 +55,7 @@ export default function Footer() {
                 >
                   0938125777
                 </a>
-                <span className="text-xs text-gray-400">(Call Directly)</span>
+                <span className="text-xs text-gray-400">({t("tapToCall")})</span>
               </p>
 
               <p className="flex items-center gap-2.5">
@@ -70,7 +70,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[#25D366] transition-colors font-semibold text-[#25D366]"
                 >
-                  Direct WhatsApp Chat
+                  {t("whatsappChat")}
                 </a>
               </p>
 
@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Column 3: Quick Links & Social (col-lg-3) */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-lg font-bold text-white tracking-wide border-l-4 border-[#84A441] pl-3">
-              QUICK LINKS
+              {t("footerQuickLinks")}
             </h4>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-300">
               <ul className="space-y-2.5">
@@ -133,7 +133,7 @@ export default function Footer() {
                     href="/privacy-policy"
                     className="hover:text-[#84A441] transition-colors block pt-1"
                   >
-                    Privacy Policy
+                    {t("footerPrivacy")}
                   </Link>
                 </li>
               </ul>
@@ -174,7 +174,7 @@ export default function Footer() {
                     href="/terms-of-use"
                     className="hover:text-[#84A441] transition-colors block pt-1"
                   >
-                    Terms Of Use
+                    {t("footerTerms")}
                   </Link>
                 </li>
               </ul>

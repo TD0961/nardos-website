@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { Phone, MapPin, CheckCircle, Send, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 import { trackInquirySubmit, trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export default function ContactFormSection() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState<string>("");
@@ -62,13 +64,13 @@ export default function ContactFormSection() {
           <div className="lg:col-span-5 space-y-8">
             <div>
               <span className="text-[#84A441] text-xs sm:text-sm font-bold uppercase tracking-widest inline-block mb-2">
-                Direct Contact
+                {t("directContact")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-4">
-                Connect Directly With Temer Property
+                {t("connectDirectly")}
               </h2>
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                We believe in full transparency and direct communication. Feel free to call us, reach out on WhatsApp, or send an inquiry. All listings, floor plans, and pricing details are completely open and accessible.
+                {t("contactFormDesc")}
               </p>
             </div>
 
@@ -80,7 +82,7 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Direct Call / Hotline
+                    {t("contactHotline")}
                   </h4>
                   <a
                     href="tel:0938125777"
@@ -89,7 +91,7 @@ export default function ContactFormSection() {
                   >
                     0938125777
                   </a>
-                  <span className="block text-[11px] text-gray-500">Tap to call directly</span>
+                  <span className="block text-[11px] text-gray-500">{t("tapToCall")}</span>
                 </div>
               </div>
 
@@ -102,7 +104,7 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    WhatsApp Chat
+                    {t("whatsappChat")}
                   </h4>
                   <a
                     href={whatsappDirectUrl}
@@ -113,7 +115,7 @@ export default function ContactFormSection() {
                   >
                     Chat on WhatsApp
                   </a>
-                  <span className="block text-[11px] text-gray-500">Quick response • 0938125777</span>
+                  <span className="block text-[11px] text-gray-500">{t("quickResponse")}</span>
                 </div>
               </div>
 
@@ -124,10 +126,10 @@ export default function ContactFormSection() {
                 </div>
                 <div>
                   <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    Headquarters
+                    {t("headquarters")}
                   </h4>
                   <p className="text-sm font-semibold text-gray-900">
-                    Sarbet & Aware Sites, Addis Ababa, Ethiopia
+                    {t("headquartersLocation")}
                   </p>
                 </div>
               </div>
@@ -162,7 +164,7 @@ export default function ContactFormSection() {
                   <div className="border-b border-gray-100 pb-3 mb-2 flex items-center justify-between">
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">
-                        Send an Inquiry
+                        {t("inquireNow")}
                       </h3>
                       <p className="text-xs text-gray-500">
                         Optional form • Directly reaches our personal property advisor
@@ -176,7 +178,7 @@ export default function ContactFormSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        First Name *
+                        {t("firstName")} *
                       </label>
                       <input
                         type="text"
@@ -189,7 +191,7 @@ export default function ContactFormSection() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        Last Name
+                        {t("lastName")}
                       </label>
                       <input
                         type="text"
@@ -204,7 +206,7 @@ export default function ContactFormSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        Phone Number *
+                        {t("yourPhone")} *
                       </label>
                       <input
                         type="tel"
@@ -217,7 +219,7 @@ export default function ContactFormSection() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        Email Address
+                        {t("yourEmail")}
                       </label>
                       <input
                         type="email"
@@ -231,7 +233,7 @@ export default function ContactFormSection() {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Message / Interested Unit
+                      {t("yourMessage")}
                     </label>
                     <textarea
                       rows={3}
@@ -248,7 +250,7 @@ export default function ContactFormSection() {
                     className="w-full bg-[#84A441] hover:bg-[#6e8a32] active:scale-98 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
-                    <span>{loading ? "Sending..." : "Submit Inquiry"}</span>
+                    <span>{loading ? "Sending..." : t("sendEmail")}</span>
                   </button>
                 </form>
               )}

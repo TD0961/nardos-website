@@ -3,12 +3,14 @@
 import React, { useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, CheckCircle2, Phone, ArrowRight } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function VideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const { openBooking } = useBooking();
+  const { t } = useLanguage();
 
   const handlePlayToggle = () => {
     if (!videoRef.current) return;
@@ -41,8 +43,11 @@ export default function VideoSection() {
             THE BEST Real Estate In Ethiopia
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
-            Watch This Video To Know Us Better
+            {t("videoTitle")}
           </h2>
+          <p className="text-gray-400 text-sm mt-3 max-w-xl mx-auto">
+            {t("videoSubtitle")}
+          </p>
           <div className="w-20 h-1 bg-[#84A441] mx-auto mt-4 rounded-full"></div>
         </div>
 

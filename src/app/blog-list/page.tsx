@@ -6,8 +6,10 @@ import Link from "next/link";
 import { posts } from "@/data/posts";
 import { Calendar, User, Search, ArrowRight } from "lucide-react";
 import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function BlogListPage() {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -27,10 +29,10 @@ export default function BlogListPage() {
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Page Hero Header */}
       <InnerHero
-        title="Real Estate Insights & News"
-        subtitle="Explore authoritative articles on real estate investments in Ethiopia, handover announcements, buyer tips, financing guides, and market trends."
+        title={t("blogListTitle")}
+        subtitle={t("blogListSubtitle")}
         badge="News & Market Insights • Expert Guides"
-        breadcrumbs={[{ label: "Blog & Insights" }]}
+        breadcrumbs={[{ label: t("navBlog") }]}
         bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "Market Trends & Legal Guides",

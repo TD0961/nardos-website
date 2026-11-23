@@ -11,8 +11,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function JobPortalPage() {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState("All");
   const [expandedJobId, setExpandedJobId] = useState<number | null>(1);
@@ -35,7 +37,7 @@ export default function JobPortalPage() {
         title="Career Opportunities at Temer Property"
         subtitle="Join our dynamic team of engineers, architects, marketing directors, and property specialists shaping modern Addis Ababa."
         badge="Careers & Culture • Join Our Mission"
-        breadcrumbs={[{ label: "Job Portal" }]}
+        breadcrumbs={[{ label: t("navJobPortal") }]}
         bgImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1800&auto=format&fit=crop&q=80"
         highlights={[
           "Competitive Salary Packages",
