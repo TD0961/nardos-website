@@ -28,8 +28,6 @@ export default function Navbar() {
   const { openBooking } = useBooking();
   const { t } = useLanguage();
 
-  const isHome = pathname === "/";
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -54,9 +52,9 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled || !isHome
+          scrolled
             ? "bg-white text-gray-800 shadow-md py-2.5"
-            : "bg-black/30 backdrop-blur-sm text-white py-3.5"
+            : "bg-black/35 backdrop-blur-md text-white py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -70,13 +68,13 @@ export default function Navbar() {
                 priority
                 sizes="(max-width: 640px) 128px, 144px"
                 className={`object-contain transition-all duration-200 ${
-                  !scrolled && isHome ? "brightness-100" : ""
+                  !scrolled ? "brightness-100" : ""
                 }`}
               />
             </div>
             <span
               className={`hidden sm:inline-block font-extrabold tracking-wide text-sm ${
-                scrolled || !isHome ? "text-gray-900" : "text-white"
+                scrolled ? "text-gray-900" : "text-white"
               }`}
             >
               Temer Property
@@ -90,7 +88,7 @@ export default function Navbar() {
               className={`px-3 py-2 rounded-md transition-colors ${
                 pathname === "/"
                   ? "text-[#84A441] font-bold"
-                  : scrolled || !isHome
+                  : scrolled
                   ? "text-gray-700 hover:text-[#84A441]"
                   : "text-white/90 hover:text-white"
               }`}
@@ -108,7 +106,7 @@ export default function Navbar() {
                 className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("properties") || pathname.includes("construction")
                     ? "text-[#84A441] font-bold"
-                    : scrolled || !isHome
+                    : scrolled
                     ? "text-gray-700 group-hover:text-[#84A441]"
                     : "text-white/90 group-hover:text-white"
                 }`}
@@ -147,7 +145,7 @@ export default function Navbar() {
               className={`px-3 py-2 rounded-md transition-colors ${
                 pathname === "/about-us"
                   ? "text-[#84A441] font-bold"
-                  : scrolled || !isHome
+                  : scrolled
                   ? "text-gray-700 hover:text-[#84A441]"
                   : "text-white/90 hover:text-white"
               }`}
@@ -165,7 +163,7 @@ export default function Navbar() {
                 className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("events") || pathname.includes("blog")
                     ? "text-[#84A441] font-bold"
-                    : scrolled || !isHome
+                    : scrolled
                     ? "text-gray-700 group-hover:text-[#84A441]"
                     : "text-white/90 group-hover:text-white"
                 }`}
@@ -199,7 +197,7 @@ export default function Navbar() {
                 className={`px-3 py-2 flex items-center gap-1 rounded-md transition-colors ${
                   pathname.includes("team") || pathname.includes("sales-officer") || pathname.includes("job")
                     ? "text-[#84A441] font-bold"
-                    : scrolled || !isHome
+                    : scrolled
                     ? "text-gray-700 group-hover:text-[#84A441]"
                     : "text-white/90 group-hover:text-white"
                 }`}
@@ -237,7 +235,7 @@ export default function Navbar() {
               className={`px-3 py-2 rounded-md transition-colors ${
                 pathname === "/contact" || pathname === "/contact-us-2"
                   ? "text-[#84A441] font-bold"
-                  : scrolled || !isHome
+                  : scrolled
                   ? "text-gray-700 hover:text-[#84A441]"
                   : "text-white/90 hover:text-white"
               }`}
@@ -256,7 +254,7 @@ export default function Navbar() {
               href="tel:0938125777"
               onClick={() => trackCallClick("navbar_header")}
               className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold transition-all ${
-                scrolled || !isHome
+                scrolled
                   ? "bg-gray-100 hover:bg-gray-200 text-gray-900"
                   : "bg-white/10 hover:bg-white/20 text-white"
               }`}
@@ -303,7 +301,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 rounded-lg transition-colors ${
-                scrolled || !isHome
+                scrolled
                   ? "text-gray-800 hover:bg-gray-100"
                   : "text-white hover:bg-white/10"
               }`}

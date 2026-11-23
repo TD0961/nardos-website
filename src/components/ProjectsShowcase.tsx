@@ -4,10 +4,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { useLanguage } from "@/context/LanguageContext";
 import { MapPin, Building, Calendar, ArrowRight } from "lucide-react";
 
 export default function ProjectsShowcase() {
   const [activeTab, setActiveTab] = useState<string>("All");
+  const { t } = useLanguage();
+
+  const tabs = [
+    { key: "All", labelKey: "tabAll" },
+    { key: "In Progress", labelKey: "tabInProgress" },
+    { key: "Delivered", labelKey: "tabDelivered" },
+    { key: "Upcoming", labelKey: "tabUpcoming" },
+  ];
 
   const filteredProjects =
     activeTab === "All"
@@ -24,26 +33,26 @@ export default function ProjectsShowcase() {
               Portfolio & Milestones
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Our Projects
+              {t("ourProjects")}
             </h2>
             <p className="text-gray-500 text-sm mt-2 max-w-xl">
-              From landmark residential high-rises to vibrant commercial centers, discover our development projects across Addis Ababa.
+              {t("ourProjectsSubtitle")}
             </p>
           </div>
 
           {/* Filter Tabs */}
           <div className="flex items-center gap-2 mt-6 md:mt-0 bg-white p-1.5 rounded-xl border border-gray-200 shadow-sm self-start md:self-auto overflow-x-auto">
-            {["All", "In Progress", "Delivered", "Upcoming"].map((tab) => (
+            {tabs.map((tab) => (
               <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
                 className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
-                  activeTab === tab
+                  activeTab === tab.key
                     ? "bg-[#84A441] text-white shadow-sm"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 }`}
               >
-                {tab}
+                {t(tab.labelKey)}
               </button>
             ))}
           </div>
@@ -68,53 +77,40 @@ export default function ProjectsShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
 
                 <div className="absolute top-3 left-3 flex gap-2">
-                  <span
-                    className={`text-xs font-bold px-3 py-1 rounded-full shadow-sm text-white ${
-                      project.status === "Delivered"
-                        ? "bg-emerald-600"
-                        : project.status === "In Progress"
-                        ? "bg-[#84A441]"
-                        : "bg-amber-600"
-                    }`}
-                  >
+                  <span className="bg-[#84A441] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
                     {project.status}
                   </span>
-                </div>
-
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
-                  <span className="flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-lg">
-                    <MapPin className="w-3.5 h-3.5 text-[#84A441]" />
-                    {project.location}
-                  </span>
-                  <span className="flex items-center gap-1 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-lg">
-                    <Building className="w-3.5 h-3.5 text-[#84A441]" />
-                    {project.units}
+                  <span className="bg-black/60 backdrop-blur-sm text-white text-[11px] font-medium px-2 py-1 rounded-full">
+                    {project.type}
                   </span>
                 </div>
               </div>
 
-              {/* Card Body */}
-              <div className="p-6 flex flex-col flex-1">
+              {/* Body */}
+              <div className="p-5 flex flex-col flex-1">
                 <Link href={`/projects/${project.slug}`}>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#84A441] transition-colors mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#84A441] transition-colors line-clamp-1 mb-2">
                     {project.title}
                   </h3>
                 </Link>
-                <p className="text-gray-500 text-xs sm:text-sm line-clamp-2 mb-4 leading-relaxed">
+
+                <div className="flex items-center gap-1.5 text-xs text-gray-500 mb-3">
+                  <MapPin className="w-3.5 h-3.5 text-[#84A441] flex-shrink-0" />
+                  <span>{project.location}</span>
+                </div>
+
+                <p className="text-gray-500 text-xs line-clamp-2 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Progress bar */}
-                <div className="mb-4">
-                  <div className="flex justify-between text-xs font-semibold text-gray-600 mb-1">
-                    <span>Construction Progress</span>
-                    <span className="text-[#84A441]">{project.progress}%</span>
+                {/* Units & Specs */}
+                <div className="grid grid-cols-2 gap-2 py-2.5 bg-gray-50 rounded-xl px-3 text-xs text-gray-600 mb-4">
+                  <div className="flex items-center gap-1.5">
+                    <Building className="w-3.5 h-3.5 text-[#84A441]" />
+                    <span className="truncate">{project.units}</span>
                   </div>
-                  <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-[#84A441] rounded-full transition-all duration-1000"
-                      style={{ width: `${project.progress}%` }}
-                    ></div>
+                  <div className="flex items-center gap-1.5 justify-end">
+                    <span className="font-bold text-[#84A441] truncate">{project.progress}</span>
                   </div>
                 </div>
 
@@ -130,7 +126,7 @@ export default function ProjectsShowcase() {
                       href={`/projects/${project.slug}`}
                       className="text-xs font-bold text-white bg-[#84A441] hover:bg-[#6e8a32] px-3.5 py-1.5 rounded-lg flex items-center gap-1 transition-all shadow-sm"
                     >
-                      <span>View Details</span>
+                      <span>{t("viewDetails")}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -146,7 +142,7 @@ export default function ProjectsShowcase() {
             href="/construction-update"
             className="inline-flex items-center gap-2 bg-[#84A441] hover:bg-[#6e8a32] text-white font-bold px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all"
           >
-            <span>View All Construction Updates</span>
+            <span>{t("navConstructionUpdates")}</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -154,4 +150,3 @@ export default function ProjectsShowcase() {
     </section>
   );
 }
-

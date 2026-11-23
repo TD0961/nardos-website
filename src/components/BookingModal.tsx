@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import { useBooking } from "@/context/BookingContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { X, CheckCircle, Phone, Calendar, User, Building, ArrowRight } from "lucide-react";
 import { trackInquirySubmit, trackWhatsAppClick } from "@/lib/analytics";
 
 export default function BookingModal() {
   const { isOpen, selectedProperty, closeBooking } = useBooking();
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState<string>("");
@@ -71,9 +73,9 @@ export default function BookingModal() {
           <div className="flex items-center gap-2 text-white/90 text-xs font-semibold uppercase tracking-wider mb-1">
             <Building className="w-4 h-4" /> Temer Property
           </div>
-          <h2 className="text-2xl font-bold">Schedule an Optional Consultation</h2>
+          <h2 className="text-2xl font-bold">{t("consultationTitle")}</h2>
           <p className="text-white/90 text-xs sm:text-sm mt-1">
-            Free site tours and personalized payment plans • Direct consultation with Senior Property Advisors & Developer Sales Team
+            {t("consultationSubtitle")}
           </p>
         </div>
 
@@ -133,7 +135,7 @@ export default function BookingModal() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Your Full Name *
+                    {t("yourName")} *
                   </label>
                   <div className="relative">
                     <User className="absolute left-3.5 top-3 w-4 h-4 text-gray-400" />
@@ -151,7 +153,7 @@ export default function BookingModal() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Phone Number *
+                      {t("yourPhone")} *
                     </label>
                     <div className="relative">
                       <Phone className="absolute left-3.5 top-3 w-4 h-4 text-gray-400" />
@@ -196,23 +198,24 @@ export default function BookingModal() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Questions / Notes (Optional)
+                    {t("yourMessage")}
                   </label>
                   <textarea
-                    rows={2}
-                    placeholder="Tell us what you're looking for (e.g. 2-bed in Sarbet, installment options)..."
+                    rows={3}
+                    placeholder="Tell us any specific requirements (floor preference, move-in timeline)..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#84A441]"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#84A441]"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#84A441] hover:bg-[#6e8a32] active:scale-98 text-white font-bold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2"
+                  className="w-full bg-[#84A441] hover:bg-[#6e8a32] text-white font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 mt-2"
                 >
-                  {loading ? "Submitting..." : "Send Free Consultation Request"}
+                  <Calendar className="w-4 h-4" />
+                  <span>{loading ? "Submitting..." : t("inquireNow")}</span>
                 </button>
               </form>
             </div>

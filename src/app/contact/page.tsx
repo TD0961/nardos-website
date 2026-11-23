@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { properties } from "@/data/properties";
+import InnerHero from "@/components/InnerHero";
+import { useLanguage } from "@/context/LanguageContext";
 import {
   Phone,
   MapPin,
@@ -14,12 +16,11 @@ import {
   Building,
   Bed,
   Bath,
-  ChevronRight,
-  Home,
 } from "lucide-react";
 import { trackInquirySubmit, trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [scheduleShowing, setScheduleShowing] = useState(false);
@@ -97,29 +98,20 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[#fbfcfa] min-h-screen pt-24 pb-20">
-      {/* Top Breadcrumb Bar matching temerproperties.com */}
-      <div className="bg-white border-b border-gray-200 py-3.5 mb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs text-gray-500">
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="hover:text-[#84A441] flex items-center gap-1">
-              <Home className="w-3.5 h-3.5" />
-              <span>Home</span>
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-            <span className="text-gray-900 font-semibold">Contact Us</span>
-          </div>
-
-          <a
-            href="tel:0938125777"
-            onClick={() => trackCallClick("contact_topbar")}
-            className="hidden sm:inline-flex items-center gap-1.5 font-bold text-[#84A441] hover:underline"
-          >
-            <Phone className="w-3.5 h-3.5" />
-            <span>Hotline: 0938125777</span>
-          </a>
-        </div>
-      </div>
+    <div className="bg-[#fbfcfa] min-h-screen pb-20">
+      {/* Page Hero Header with high clarity & transparency */}
+      <InnerHero
+        title={t("navContact")}
+        subtitle="Connect directly with our real estate advisory team at Woldemaryam Building, Sarbet, Addis Ababa for private showings and developer pricing."
+        badge="Direct Developer Support"
+        breadcrumbs={[{ label: t("navContact") }]}
+        bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&auto=format&fit=crop&q=80"
+        highlights={[
+          "Sarbet Office: Woldemaryam Building",
+          "Direct Hotline: 0938125777",
+          "Site Tours Available Mon-Sat",
+        ]}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Content & Sidebar Grid */}
@@ -167,7 +159,7 @@ export default function ContactPage() {
                   className="bg-[#84A441] hover:bg-[#739134] text-white p-4 sm:p-5 text-center rounded-xl font-black text-lg sm:text-xl tracking-wide flex items-center justify-center gap-3 shadow-md transition-all active:scale-98"
                 >
                   <Phone className="w-6 h-6 animate-pulse" />
-                  <span>HOTLINE – 0938125777</span>
+                  <span>{t("contactHotline")}</span>
                 </a>
               </div>
             </div>
@@ -178,24 +170,26 @@ export default function ContactPage() {
                 Temer Real Estate, located on Sarbet to Kera Road, Woldemaryam Building, is your trusted partner in the real estate market in Addis Ababa, Ethiopia. We specialize in offering high-quality{" "}
                 <strong className="text-gray-900 font-bold">apartments for sale in Addis Ababa</strong>,{" "}
                 <strong className="text-gray-900 font-bold">houses for sale</strong>, and{" "}
-                <strong className="text-gray-900 font-bold">commercial spaces in Addis Ababa</strong>
-                —all delivered with a focus on quality and timeliness.
+                <strong className="text-gray-900 font-bold">commercial properties</strong> in the most sought-after neighborhoods across the city.
               </p>
               <p>
-                Whether you are searching for your next home or investing in{" "}
-                <strong className="text-gray-900 font-bold">real estate in Ethiopia</strong>, our experienced team is here to support you. From finding the perfect house for sale to exploring premium commercial space in Addis Ababa, we offer a seamless, efficient experience backed by deep local expertise.
+                Whether you are looking to buy your dream home or make a smart investment in Ethiopia’s thriving property sector, our expert team is here to guide you every step of the way with professional advisory, verified title documentation, and milestone-based installment plans.
               </p>
               <p>
-                Temer Properties is one of the top real estate developers in Addis Ababa, Ethiopia—trusted for delivering superior residential and commercial projects. Reach out today and let us help you find your ideal property.
+                Visit us today or call our hotline to explore the best real estate opportunities in Addis Ababa with direct developer transparency.
               </p>
             </div>
 
-            {/* 3. Interactive Contact Form ("Contact Me") */}
+            {/* 3. Original "Contact Me" Form with Schedule Tour Selector */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
-              <div className="border-b border-gray-200 pb-4 mb-6 flex items-center justify-between">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Contact Me</h3>
-                  <p className="text-xs text-gray-500">Send an inquiry directly to our sales advisory team.</p>
+                  <h3 className="text-xl sm:text-2xl font-black text-[#2d3e1e]">
+                    Contact Me
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Send a direct inquiry or request an in-person structural walkthrough.
+                  </p>
                 </div>
                 <div className="hidden sm:flex items-center gap-2 text-xs text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
@@ -234,7 +228,7 @@ export default function ContactPage() {
                         className="w-4 h-4 text-[#84A441] rounded border-gray-300 focus:ring-[#84A441]"
                       />
                       <span className="text-sm font-bold text-gray-800">
-                        Schedule a showing / site visit?
+                        {t("scheduleShowing")}
                       </span>
                     </label>
 
@@ -283,7 +277,7 @@ export default function ContactPage() {
                   {/* Name Input */}
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Your Name *
+                      {t("yourName")} *
                     </label>
                     <input
                       type="text"
@@ -299,7 +293,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        Email Address *
+                        {t("yourEmail")} *
                       </label>
                       <input
                         type="email"
@@ -313,7 +307,7 @@ export default function ContactPage() {
 
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                        Phone Number *
+                        {t("yourPhone")} *
                       </label>
                       <input
                         type="tel"
@@ -329,7 +323,7 @@ export default function ContactPage() {
                   {/* Comment / Message Textarea */}
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Message / Comment *
+                      {t("yourMessage")} *
                     </label>
                     <textarea
                       rows={5}
@@ -349,147 +343,129 @@ export default function ContactPage() {
                       className="w-full sm:w-auto bg-[#84A441] hover:bg-[#739134] text-white font-bold py-3 px-8 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2"
                     >
                       <Send className="w-4 h-4" />
-                      <span>{loading ? "Sending..." : "Send Email"}</span>
+                      <span>{loading ? "Sending..." : t("sendEmail")}</span>
                     </button>
 
                     <a
-                      href="https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20would%20like%20to%20inquire%20about%20your%20apartments."
+                      href="https://wa.me/251938125777?text=Hello%20Temer%20Property%2C%20I%20would%20like%20to%20inquire%20about%20your%20available%20apartments."
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick("contact_page_form")}
-                      className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white font-bold py-3 px-8 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                      onClick={() => trackWhatsAppClick("contact_page_form_whatsapp")}
+                      className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2"
                     >
-                      <span>Chat on WhatsApp</span>
+                      <span>Direct WhatsApp</span>
                     </a>
                   </div>
                 </form>
               )}
             </div>
-
-            {/* 4. Embedded Google Map */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Our Office Location</h3>
-              <p className="text-xs text-gray-500 mb-4">
-                Woldemaryam Building, Sarbet to Kera Road, Addis Ababa, Ethiopia.
-              </p>
-              <div className="aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200 shadow-inner">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.660144955776!2d38.74205837591632!3d8.995079289455325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b854e4df5b9e5%3A0xc3cf0205e44ba2eb!2sSarbet%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: Sticky Sidebar matching Houzez/WpResidence theme (4 cols) */}
-          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
-            {/* Promo Banner Card */}
-            <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm group">
-              <div className="relative aspect-[16/10] bg-gray-100">
-                <Image
-                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop&q=80"
-                  alt="Temer Property Promotion"
-                  fill
-                  sizes="350px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5 flex flex-col justify-end text-white">
-                  <span className="text-[11px] font-bold text-[#84A441] uppercase tracking-wider">
-                    Prime Investment
-                  </span>
-                  <h4 className="text-base font-extrabold leading-snug">
-                    Sarbet City Plus Luxury Apartments
-                  </h4>
-                  <p className="text-xs text-gray-300 mt-1">
-                    15% Down Payment • 36 Months Delivery
-                  </p>
+          {/* Right Column: Sticky Sidebar with Promo Banner & Latest Listings (4 cols) */}
+          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+            {/* Promo Card */}
+            <div className="bg-gradient-to-br from-[#2d3e1e] to-[#1a2512] text-white rounded-2xl p-6 sm:p-7 shadow-lg relative overflow-hidden">
+              <div className="relative z-10 space-y-3">
+                <span className="bg-[#84A441] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                  Developer Direct
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black leading-snug">
+                  Zero Broker Fees • Direct Developer Pricing
+                </h3>
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                  Purchase directly from Temer Property with verified master deed documentation and flexible milestone payments.
+                </p>
+                <div className="pt-2">
+                  <a
+                    href="tel:0938125777"
+                    onClick={() => trackCallClick("contact_sidebar_call")}
+                    className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-[#84A441] hover:text-white transition-all shadow"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-[#84A441]" />
+                    <span>Call: 0938125777</span>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* "Latest Listings" Widget matching temerproperties.com */}
+            {/* Latest Listings Widget */}
             <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-base font-bold text-gray-900 border-b border-gray-100 pb-3 mb-4">
-                Latest Listings
-              </h3>
+              <h4 className="font-extrabold text-[#2d3e1e] text-base mb-4 pb-3 border-b border-gray-100 flex items-center gap-2">
+                <Building className="w-4 h-4 text-[#84A441]" />
+                <span>Latest Listings</span>
+              </h4>
 
               <div className="space-y-4">
                 {latestListings.map((prop) => (
                   <Link
                     key={prop.id}
                     href={`/properties/${prop.slug}`}
-                    className="flex gap-3 group items-center"
+                    className="group flex gap-3 items-center hover:bg-gray-50 p-2 rounded-xl transition-all"
                   >
-                    <div className="relative w-20 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
+                    <div className="relative w-20 h-16 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                       <Image
                         src={prop.image}
                         alt={prop.title}
                         fill
                         sizes="80px"
-                        className="object-cover group-hover:scale-105 transition-transform"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-xs font-bold text-gray-900 group-hover:text-[#84A441] transition-colors truncate">
+                      <h5 className="font-bold text-gray-900 text-xs truncate group-hover:text-[#84A441] transition-colors">
                         {prop.title}
-                      </h4>
+                      </h5>
                       <span className="text-xs font-extrabold text-[#84A441] block">
                         {prop.price}
                       </span>
-                      <div className="flex items-center gap-2 text-[10px] text-gray-400 mt-0.5">
+                      <div className="flex items-center gap-2 text-[11px] text-gray-400 mt-0.5">
                         <span className="flex items-center gap-0.5">
-                          <Bed className="w-3 h-3 text-[#84A441]" />
-                          {prop.bedrooms}
+                          <Bed className="w-3 h-3" /> {prop.bedrooms}
                         </span>
-                        <span>•</span>
                         <span className="flex items-center gap-0.5">
-                          <Bath className="w-3 h-3 text-[#84A441]" />
-                          {prop.bathrooms}
+                          <Bath className="w-3 h-3" /> {prop.bathrooms}
                         </span>
-                        <span>•</span>
-                        <span>{prop.size}</span>
                       </div>
                     </div>
                   </Link>
                 ))}
               </div>
-
-              <div className="pt-4 mt-4 border-t border-gray-100">
-                <Link
-                  href="/properties-standard-list"
-                  className="text-xs font-bold text-[#84A441] hover:underline flex items-center justify-between"
-                >
-                  <span>View All Listings</span>
-                  <span>→</span>
-                </Link>
-              </div>
             </div>
 
-            {/* Quick Assistance Card */}
-            <div className="bg-[#181d24] text-white rounded-2xl p-6 shadow-sm border border-gray-800 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#84A441] uppercase tracking-wider">
-                <Building className="w-4 h-4" />
-                <span>Need Direct Assistance?</span>
-              </div>
-              <h4 className="text-base font-extrabold">Speak with Our Lead Advisor</h4>
-              <p className="text-xs text-gray-300 leading-relaxed">
-                Connect directly for personalized quotes, cash discount calculations, and immediate floor plan brochures.
+            {/* Working Hours Card */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm space-y-2">
+              <h4 className="font-extrabold text-[#2d3e1e] text-sm flex items-center gap-2">
+                <Clock className="w-4 h-4 text-[#84A441]" />
+                <span>Office Hours</span>
+              </h4>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                Monday – Saturday: 8:30 AM – 5:30 PM (EAT)
+                <br />
+                Sunday: Private On-Site Tours by Appointment
               </p>
-              <div className="pt-2">
-                <a
-                  href="tel:0938125777"
-                  onClick={() => trackCallClick("contact_sidebar_call")}
-                  className="w-full bg-[#84A441] hover:bg-[#739134] text-white py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-sm"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>Call 0938125777</span>
-                </a>
-              </div>
             </div>
+          </div>
+        </div>
+
+        {/* 4. Google Maps Location Section */}
+        <div className="mt-12 bg-white rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-sm overflow-hidden">
+          <div className="mb-4">
+            <h4 className="text-lg font-black text-[#2d3e1e]">Visit Our Head Office</h4>
+            <p className="text-xs text-gray-500">
+              Sarbet to Kera Road, Woldemaryam Building, Addis Ababa, Ethiopia
+            </p>
+          </div>
+          <div className="w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-gray-200">
+            <iframe
+              title="Temer Properties Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.7183610991953!2d38.7408711!3d8.9980597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85ce9df256d9%3A0xe7268d8ef534a6c4!2sSarbet%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1716000000000!5m2!1sen!2set"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

@@ -38,7 +38,7 @@ export const translations: Translations = {
   navAboutUs: {
     en: "About Us",
     am: "ስለ እኛ",
-    om: "Waa\'ee Keenya",
+    om: "Waa'ee Keenya",
   },
   navEvents: {
     en: "Events",
@@ -100,12 +100,22 @@ export const translations: Translations = {
   viewDetails: {
     en: "View Details",
     am: "ዝርዝሩን ይመልከቱ",
-    om: "Bal\'inaan Ilaalaa",
+    om: "Bal'inaan Ilaalaa",
   },
   inquireNow: {
     en: "Inquire Now",
     am: "አሁን ይጠይቁ",
     om: "Amma Gaafadhaa",
+  },
+  contactAdvisor: {
+    en: "Contact Advisor",
+    am: "አማካሪ ያነጋግሩ",
+    om: "Gorsaa Qunnamaa",
+  },
+  inquireAdvisor: {
+    en: "Inquire",
+    am: "ይጠይቁ",
+    om: "Gaafadhaa",
   },
   allLocations: {
     en: "All Locations",
@@ -135,6 +145,72 @@ export const translations: Translations = {
     om: "Manneen ammayyaa fi daldalaa Saarbeet, Aayaat, Awaaree fi Piyoosaatti. Kaffaltii duraa 15% fi kaffaltii dhala malee.",
   },
 
+  // Stats Counters
+  satisfiedClients: {
+    en: "Satisfied Customers",
+    am: "ረክተው የተረከቡ ደንበኞች",
+    om: "Maamiltoota Itti Qanani\'an",
+  },
+  yearsExperience: {
+    en: "Years Of Experience",
+    am: "የዓመታት አስተማማኝ ልምድ",
+    om: "Waggoota Muuxannoo",
+  },
+  deliveredProjects: {
+    en: "Delivered Projects",
+    am: "የተጠናቀቁ ፕሮጀክቶች",
+    om: "Pirojektoota Xumuraman",
+  },
+  apartmentUnits: {
+    en: "Apartment Units",
+    am: "የተሰሩ አፓርታማ ቤቶች",
+    om: "Manneen Jireenyaa",
+  },
+
+  // Section Headers
+  latestProperties: {
+    en: "Our Latest Properties",
+    am: "የቅርብ ጊዜ አፓርታማዎች እና ሱቆች",
+    om: "Qabeenyaalee Keenya Haaraa",
+  },
+  latestPropertiesSubtitle: {
+    en: "Explore thoughtfully designed apartments and commercial retail shops across prime Addis Ababa neighborhoods.",
+    am: "በአዲስ አበባ ምርጥ አካባቢዎች በጥራት የተገነቡ ዘመናዊ የመኖሪያ ቤቶችንና የንግድ ሱቆችን ይጎብኙ።",
+    om: "Manneen ammayyaa fi suuqii daldalaa bakkeewwan filatamootti qophaa'an daawwadhaa.",
+  },
+  ourProjects: {
+    en: "Our Projects",
+    am: "የእኛ ፕሮጀክቶች",
+    om: "Pirojektoota Keenya",
+  },
+  ourProjectsSubtitle: {
+    en: "From landmark residential high-rises to vibrant commercial centers, discover our development projects across Addis Ababa.",
+    am: "ከተዋቡ የመኖሪያ አፓርታማዎች እስከ ዘመናዊ የንግድ ማዕከላት ድረስ በአዲስ አበባ ያሉ ፕሮጀክቶቻችንን ይመልከቱ።",
+    om: "Pirojektoota manneen jireenyaa fi daldalaa Finfinnee keessatti ijaaramaa jiran ilaalaa.",
+  },
+
+  // Filter Tabs
+  tabAll: {
+    en: "All",
+    am: "ሁሉም",
+    om: "Hundumaa",
+  },
+  tabInProgress: {
+    en: "In Progress",
+    am: "በግንባታ ላይ",
+    om: "Ijaarsa Irra",
+  },
+  tabDelivered: {
+    en: "Delivered",
+    am: "የተጠናቀቀ",
+    om: "Xumurame",
+  },
+  tabUpcoming: {
+    en: "Upcoming",
+    am: "በቅርብ የሚጀመር",
+    om: "Fuulduratti",
+  },
+
   // Property Card Specs
   bedrooms: {
     en: "Beds",
@@ -162,6 +238,28 @@ export const translations: Translations = {
     om: "Sarara Bilbila Kallattii: 0938125777",
   },
 
+  // Team Page
+  meetOurTeam: {
+    en: "Meet Our Team",
+    am: "የስራ አመራር ቡድናችን",
+    om: "Garee Keenya Baradhaa",
+  },
+  meetOurTeamSubtitle: {
+    en: "Meet the visionary founders, executive directors, and experienced department heads driving excellence across Temer Property developments in Addis Ababa.",
+    am: "በቴመር ፕሮፐርቲ የላቀ ጥራትና ታማኝነትን የሚያረጋግጡ መስራቾችን፣ ዳይሬክተሮችንና የስራ ሃላፊዎችን ይወቁ።",
+    om: "Hundeeffamtoota, daarektaroota fi gaggeessitoota misooma Temer Property geggeessan beekaa.",
+  },
+  executiveBoard: {
+    en: "Executive Board & Co-Founders",
+    am: "የስራ አስፈፃሚ ቦርድና መስራቾች",
+    om: "Boordii Hojii Raawwachiiftuu fi Hundeeffamtoota",
+  },
+  executiveManagement: {
+    en: "Executive Management Team",
+    am: "የማኔጅመንት እና ክፍል ሃላፊዎች",
+    om: "Garee Hojii Gaggeessitootaa",
+  },
+
   // Contact Page
   contactHotline: {
     en: "HOTLINE – 0938125777",
@@ -174,9 +272,9 @@ export const translations: Translations = {
     om: "Iddoo ijaarsaa daawwachuu barbaadduu?",
   },
   sendEmail: {
-    en: "Send Email",
-    am: "ኢሜይል ይላኩ",
-    om: "Imeelii Ergaa",
+    en: "Send Message",
+    am: "መልእክት ይላኩ",
+    om: "Ergaa Ergaa",
   },
   yourName: {
     en: "Your Name",
@@ -199,6 +297,18 @@ export const translations: Translations = {
     om: "Ergaa / Yaada",
   },
 
+  // Booking Modal
+  consultationTitle: {
+    en: "Schedule an Optional Consultation",
+    am: "የሳይት ጉብኝት ወይም ምክክር ይያዙ",
+    om: "Mariifi Daawwannaa Qopheessaa",
+  },
+  consultationSubtitle: {
+    en: "Free site tours and personalized payment plans • Direct consultation with Senior Property Advisors & Developer Sales Team",
+    am: "ነፃ የሳይት ጉብኝትና የክፍያ አማራጮች • በቀጥታ ከአማካሪዎች ጋር",
+    om: "Daawwannaa tolaa fi karoora kaffaltii • Gorsitoota waliin",
+  },
+
   // Footer & Trust
   footerAbout: {
     en: "Temer Property is a premier real estate developer in Addis Ababa, Ethiopia, dedicated to delivering superior residential and commercial projects with verified title deeds.",
@@ -211,4 +321,3 @@ export const translations: Translations = {
     om: "Mirgi hundi seeraan eegamaadha. Temer Property.",
   },
 };
-

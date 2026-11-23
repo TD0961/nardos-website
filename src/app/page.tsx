@@ -9,10 +9,12 @@ import ProjectsShowcase from "@/components/ProjectsShowcase";
 import BlogSection from "@/components/BlogSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import { properties } from "@/data/properties";
+import { useLanguage } from "@/context/LanguageContext";
 import { Building, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
+  const { t } = useLanguage();
   const [selectedArea, setSelectedArea] = useState<string>("All");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedBedrooms, setSelectedBedrooms] = useState<string>("All");
@@ -54,11 +56,11 @@ export default function HomePage() {
               Real Estate In Ethiopia
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Our Latest Properties
+              {t("latestProperties")}
             </h2>
             <div className="w-16 h-1 bg-[#84A441] mx-auto mt-4 rounded-full"></div>
             <p className="text-gray-500 text-sm mt-3">
-              Explore thoughtfully designed apartments and commercial retail shops across prime Addis Ababa neighborhoods.
+              {t("latestPropertiesSubtitle")}
             </p>
           </div>
 
@@ -74,7 +76,7 @@ export default function HomePage() {
                     : "bg-white text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
                 }`}
               >
-                {area === "All" ? "All Locations" : area}
+                {area === "All" ? t("allLocations") : area}
               </button>
             ))}
           </div>

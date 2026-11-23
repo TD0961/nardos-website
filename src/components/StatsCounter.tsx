@@ -1,30 +1,35 @@
+"use client";
+
 import React from "react";
 import { Users, Award, Building2, Home } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function StatsCounter() {
+  const { t } = useLanguage();
+
   const stats = [
     {
       icon: Users,
       value: "10,000+",
-      label: "Satisfied Customers",
+      labelKey: "satisfiedClients",
       desc: "Homeowners and retail investors who trust Temer",
     },
     {
       icon: Award,
       value: "10+",
-      label: "Years Of Experience",
+      labelKey: "yearsExperience",
       desc: "Delivering real estate excellence across Ethiopia",
     },
     {
       icon: Building2,
       value: "10+",
-      label: "Delivered Projects",
+      labelKey: "deliveredProjects",
       desc: "Completed on schedule with 100% legal ownership",
     },
     {
       icon: Home,
       value: "350+",
-      label: "Apartment Units",
+      labelKey: "apartmentUnits",
       desc: "Modern luxury living spaces delivered to clients",
     },
   ];
@@ -47,7 +52,7 @@ export default function StatsCounter() {
                   {stat.value}
                 </div>
                 <div className="text-sm font-bold text-[#84A441] mb-1">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </div>
                 <p className="text-xs text-gray-500 hidden sm:block">
                   {stat.desc}
@@ -60,4 +65,3 @@ export default function StatsCounter() {
     </section>
   );
 }
-

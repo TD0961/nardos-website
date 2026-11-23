@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { salesOfficers } from "@/data/team";
 import { useBooking } from "@/context/BookingContext";
-import { Phone, MessageSquare, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { MessageSquare, ShieldCheck, CheckCircle2 } from "lucide-react";
 import InnerHero from "@/components/InnerHero";
-import { trackCallClick, trackWhatsAppClick } from "@/lib/analytics";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 // Professional advisory specializations (without individual personal names)
 const advisorRoles = [
@@ -171,37 +171,26 @@ export default function SalesOfficersPage() {
                   </div>
                 </div>
 
-                <div className="mt-auto space-y-2 pt-3 border-t border-gray-100">
+                <div className="mt-auto grid grid-cols-2 gap-2 pt-3 border-t border-gray-100">
                   <a
-                    href="tel:0938125777"
-                    onClick={() => trackCallClick("sales_officer_card")}
-                    className="w-full bg-[#84A441] hover:bg-[#6e8a32] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                    href={`https://wa.me/251938125777?text=${encodeURIComponent(
+                      `Hello Temer Property, I would like to consult with your ${advisor.role} regarding available units and payment terms.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("sales_officer_whatsapp")}
+                    className="bg-[#25D366] hover:bg-[#20ba59] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>Call 0938125777</span>
+                    <span>Contact</span>
                   </a>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href={`https://wa.me/251938125777?text=${encodeURIComponent(
-                        `Hello Temer Property, I would like to consult with your ${advisor.role} regarding available units and payment terms.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick("sales_officer_whatsapp")}
-                      className="bg-[#25D366] hover:bg-[#20ba59] text-white py-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-colors"
-                    >
-                      <span>WhatsApp</span>
-                    </a>
-
-                    <button
-                      onClick={() => openBooking(`Consultation with ${advisor.role}`)}
-                      className="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
-                    >
-                      <MessageSquare className="w-3.5 h-3.5" />
-                      <span>Book Tour</span>
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => openBooking(`Consultation with ${advisor.role}`)}
+                    className="bg-[#84A441] hover:bg-[#6e8a32] text-white py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Inquire</span>
+                  </button>
                 </div>
               </div>
             </div>
